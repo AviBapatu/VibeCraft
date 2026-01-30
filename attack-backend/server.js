@@ -2,19 +2,32 @@ const express = require("express");
 const { startScenario, stopScenario } = require("./scenarioManager");
 
 const authFailure = require("./scenarios/authFailure");
-// later: require other scenarios
+const latencyDegradation = require("./scenarios/latencyDegradation");
+const dbExhaustion = require("./scenarios/dbExhaustion");
+const trafficAnomaly = require("./scenarios/trafficAnomaly");
+const cascadingFailure = require("./scenarios/cascadingFailure");
 
 const app = express();
 app.use(express.json());
 
+const scenarioMap = {
+    "auth-failure": authFailure,
+    "latency-degradation": latencyDegradation,
+    "db-exhaustion": dbExhaustion,
+    "traffic-anomaly": trafficAnomaly,
+    "cascading-failure": cascadingFailure
+};
+
 app.post("/attack/start/:name", (req, res) => {
     const { name } = req.params;
+    const scenarioFn = scenarioMap[name];
 
-    if (name === "auth-failure") {
-        startScenario(name, authFailure);
+    if (scenarioFn) {
+        startScenario(name, scenarioFn);
+        res.json({ status: "started", scenario: name });
+    } else {
+        res.status(404).json({ error: "Scenario not found" });
     }
-
-    res.json({ status: "started", scenario: name });
 });
 
 app.post("/attack/stop/:name", (req, res) => {

@@ -3,11 +3,18 @@ const { faker } = require("@faker-js/faker");
 const emitLog = require("../logger/emitLog");
 const clamp = require("../utils/clamp");
 
-module.exports = function authFailureScenario(t) {
-    const rate = clamp(1 + Math.floor(t / 20), 1, 10);
-    const latency = 300 + t * 8;
+function getEmissionParams(t) {
     const pError = clamp(0.02 + (t / 120) * 0.6, 0.02, 0.6);
-    const retryCount = Math.floor(t / 30);
+    return {
+        rate: clamp(1 + Math.floor(t / 20), 1, 10),
+        latency: 300 + t * 8,
+        pError,
+        retryCount: Math.floor(t / 30)
+    };
+}
+
+module.exports = function authFailureScenario(t) {
+    const { rate, latency, pError, retryCount } = getEmissionParams(t);
 
     for (let i = 0; i < rate; i++) {
         const isError = Math.random() < pError;
