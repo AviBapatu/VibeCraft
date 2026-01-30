@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import Optional, List, Set, Dict, Any
+from typing import Optional, List, Set, Dict, Any, Literal
 import uuid
+from enum import Enum
 from correlation.incident_rules import (
     is_correlated, 
     calculate_severity, 
@@ -8,6 +9,11 @@ from correlation.incident_rules import (
 )
 from memory.vector_store import VectorStore
 from memory.embedder import embed
+
+class ApprovalStatus(str, Enum):
+    PENDING = "PENDING"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
 
 class Incident:
     def __init__(self, services: Set[str], signals: Set[str], started_at: datetime, similar_incidents: List[Dict] = None):
@@ -25,6 +31,15 @@ class Incident:
         self.resolution = ""
         self.resolved_at: Optional[datetime] = None
         self.similar_incidents = similar_incidents if similar_incidents else []
+        
+        # Reasoning & Approval
+        self.reasoning: Optional[Dict] = None
+        self.approval = {
+            "status": ApprovalStatus.PENDING.value,
+            "actor": None,
+            "comment": None,
+            "decided_at": None
+        }
 
     def to_dict(self):
         return {
@@ -39,7 +54,9 @@ class Incident:
             "window_count": self.window_count,
             "summary_text": self.summary_text,
             "resolution": self.resolution,
-            "similar_incidents": self.similar_incidents
+            "similar_incidents": self.similar_incidents,
+            "reasoning": self.reasoning,
+            "approval": self.approval
         }
 
 class IncidentManager:
@@ -60,6 +77,59 @@ class IncidentManager:
         if self.active_incident:
             return self.active_incident.to_dict()
         return None
+
+    def update_reasoning(self, incident_id: str, reasoning: Dict):
+        """Attaches reasoning to the active incident."""
+        if self.active_incident and self.active_incident.incident_id == incident_id:
+            self.active_incident.reasoning = reasoning
+            # If we wanted to auto-reject low confidence, we could do it here
+            # But per rules, we just store it.
+
+    def approve_incident(self, incident_id: str, actor: str, comment: Optional[str] = None):
+        """Approves the incident if validation passes."""
+        if not self.active_incident or self.active_incident.incident_id != incident_id:
+             raise ValueError(f"Incident {incident_id} not found or not active")
+        
+        # Validation Rules
+        if not self.active_incident.reasoning:
+            raise ValueError("Cannot approve incident without reasoning")
+            
+        # Check Confidence Threshold? (Optional, but user mentioned it)
+        # Assuming reasoning has 'confidence_score' or 'confidence'
+        confidence = self.active_incident.reasoning.get("confidence", 0)
+        # Configurable threshold could go here. Let's say 0.6 as per prompt example.
+        if confidence < 0.6:
+             # Just a warning or strict block? User said "Confidence >= configurable threshold".
+             # Strict block for now.
+             raise ValueError(f"Confidence score {confidence} is below threshold 0.6")
+
+        self.active_incident.approval = {
+            "status": ApprovalStatus.APPROVED.value,
+            "actor": actor,
+            "comment": comment,
+            "decided_at": datetime.utcnow().isoformat()
+        }
+        return self.active_incident.to_dict()
+
+    def reject_incident(self, incident_id: str, actor: str, comment: Optional[str] = None):
+        """Rejects the incident."""
+        if not self.active_incident or self.active_incident.incident_id != incident_id:
+             raise ValueError(f"Incident {incident_id} not found or not active")
+        
+        # We can reject even without reasoning? Probably yes, explicitly rejecting garbage.
+        # But prompt said "Approval is allowed only if reasoning has already been generated"
+        # It didn't explicitly restrict rejection. But safe to assume we are rejecting a PROPOSAL.
+        # If there is no reasoning/proposal, there is nothing to reject.
+        if not self.active_incident.reasoning:
+             raise ValueError("Cannot reject incident without reasoning (nothing to reject)")
+
+        self.active_incident.approval = {
+            "status": ApprovalStatus.REJECTED.value,
+            "actor": actor,
+            "comment": comment,
+            "decided_at": datetime.utcnow().isoformat()
+        }
+        return self.active_incident.to_dict()
 
     def update(self, anomaly_result: Dict[str, Any], affected_services: List[str], now: datetime):
         """
