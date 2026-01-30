@@ -1,0 +1,54 @@
+const BASE_URL = "http://localhost:5000";
+
+export async function getCurrentIncident() {
+    try {
+        const res = await fetch(`${BASE_URL}/incident/current`);
+        if (!res.ok) return null;
+        return res.json();
+    } catch (error) {
+        console.error("Failed to fetch current incident:", error);
+        return null;
+    }
+}
+
+export async function getSimilarIncidents() {
+    try {
+        const res = await fetch(`${BASE_URL}/incident/similar`);
+        if (!res.ok) {
+            return { similar_incidents: [] };
+        }
+        return res.json();
+    } catch (error) {
+        console.error("Failed to fetch similar incidents:", error);
+        return { similar_incidents: [] };
+    }
+}
+
+export async function reasonIncident() {
+    try {
+        const res = await fetch(`${BASE_URL}/incident/reason`, {
+            method: "POST"
+        });
+        if (!res.ok) {
+            return null;
+        }
+        return res.json();
+    } catch (error) {
+        console.error("Failed to fetch reasoning:", error);
+        return null;
+    }
+}
+
+export async function approveIncident(payload) {
+    const res = await fetch(`${BASE_URL}/incident/approve`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || "Approval failed");
+    }
+    return res.json();
+}

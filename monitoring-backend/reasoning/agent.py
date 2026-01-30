@@ -18,7 +18,7 @@ class ReasoningResult(BaseModel):
     hypothesis: str
     evidence: str
     recommended_actions: List[str]
-    confidence: float
+    final_confidence: float
     uncertainty_notes: Optional[str] = None
 
 class ReasoningAgent:
@@ -44,7 +44,7 @@ class ReasoningAgent:
             "hypothesis": "Auth failure due to JWT expiration or attack.",
             "evidence": "High error rate in auth service.",
             "recommended_actions": ["Rotate keys", "Block IP"],
-            "confidence": 0.85,
+            "final_confidence": 0.85,
             "uncertainty_notes": "Pure Mock"
         }
 

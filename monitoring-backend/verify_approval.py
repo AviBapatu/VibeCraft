@@ -87,7 +87,7 @@ def verify_approval_flow():
         log(f"FAILURE: Reasoning generation failed: {resp.status_code} {resp.text}")
         return
     reasoning = resp.json()
-    confidence = reasoning.get("confidence", 0)
+    confidence = reasoning.get("final_confidence", 0)
     log(f"Reasoning generated. Confidence: {confidence}")
 
     # 5. Attempt Approval (Valid)
@@ -123,6 +123,36 @@ def verify_approval_flow():
             data = resp.json()
             if data["approval_status"] == "APPROVED":
                 log("State verification PASS.")
+                
+                # 6. Verify Confidence Snapshot
+                log("Verifying confidence snapshot...")
+                resp = requests.get(f"{BASE_URL}/incident/current")
+                current = resp.json()
+                approved_confidence = current.get("approval", {}).get("approved_with_confidence")
+                if approved_confidence is not None:
+                    if abs(approved_confidence - confidence) < 0.01:
+                        log(f"Confirmed: approved_with_confidence = {approved_confidence} matches reasoning final_confidence. GOOD.")
+                    else:
+                        log(f"WARNING: approved_with_confidence = {approved_confidence} != final_confidence {confidence}")
+                else:
+                    log("FAILURE: approved_with_confidence field missing!")
+                
+                # 7. Test Approval Lock (Try to approve again)
+                log("Testing approval lock (duplicate approval)...")
+                resp = requests.post(f"{BASE_URL}/incident/approve", json=approval_payload)
+                if resp.status_code == 409:
+                    log("Confirmed: Cannot approve again (409 Conflict). GOOD.")
+                else:
+                    log(f"FAILURE: Expected 409 but got {resp.status_code}: {resp.text}")
+                
+                # 8. Try to reject after approval
+                log("Testing approval lock (reject after approval)...")
+                approval_payload["decision"] = "REJECT"
+                resp = requests.post(f"{BASE_URL}/incident/approve", json=approval_payload)
+                if resp.status_code == 409:
+                    log("Confirmed: Cannot reject after approval (409 Conflict). GOOD.")
+                else:
+                    log(f"FAILURE: Expected 409 but got {resp.status_code}: {resp.text}")
             else:
                 log("State verification FAIL.")
         else:
