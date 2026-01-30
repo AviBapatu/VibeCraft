@@ -71,9 +71,13 @@ def detect_anomaly(db: Session):
     if metrics["avg_retry_short"] > 2:
         signals.append("retry_storm")
         
+    # extract affected services
+    affected_services = list(set(log.service for log in short_logs))
+        
     return {
         "anomaly": len(signals) > 0,
         "window": "last_60s",
         "signals": signals,
-        "metrics": metrics
+        "metrics": metrics,
+        "affected_services": affected_services
     }

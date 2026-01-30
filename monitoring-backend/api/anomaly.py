@@ -12,6 +12,20 @@ def get_db():
     finally:
         db.close()
 
+from datetime import datetime, timezone
+from correlation.incident_manager import IncidentManager
+
 @router.get("/check")
 def check_anomaly(db: Session = Depends(get_db)):
-    return detect_anomaly(db)
+    result = detect_anomaly(db)
+    
+    # Update Incident State
+    now = datetime.now(timezone.utc)
+    manager = IncidentManager.get_instance()
+    manager.update(
+        anomaly_result=result,
+        affected_services=result.get("affected_services", []),
+        now=now
+    )
+    
+    return result
