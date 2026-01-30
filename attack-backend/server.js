@@ -1,5 +1,5 @@
 const express = require("express");
-const { startScenario, stopScenario } = require("./scenarioManager");
+const { startScenario, stopScenario, startBaseline } = require("./scenarioManager");
 
 const authFailure = require("./scenarios/authFailure");
 const latencyDegradation = require("./scenarios/latencyDegradation");
@@ -35,6 +35,7 @@ app.post("/attack/stop/:name", (req, res) => {
     res.json({ status: "stopped", scenario: req.params.name });
 });
 
-app.listen(4000, () =>
-    console.log("Attack backend running on port 4000")
-);
+app.listen(4000, () => {
+    console.log("Attack backend running on port 4000");
+    startBaseline();
+});
