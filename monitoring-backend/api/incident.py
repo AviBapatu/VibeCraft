@@ -10,3 +10,16 @@ def get_current_incident():
     """
     manager = IncidentManager.get_instance()
     return manager.get_current()
+
+@router.get("/similar")
+def get_similar_incidents():
+    """
+    Returns similar past incidents for the CURRENT active incident.
+    Returns: { "similar_incidents": [...] }
+    """
+    manager = IncidentManager.get_instance()
+    current = manager.get_current()
+    if not current:
+        return {"similar_incidents": []}
+    
+    return {"similar_incidents": current.get("similar_incidents", [])}
