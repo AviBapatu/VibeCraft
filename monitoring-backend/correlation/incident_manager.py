@@ -6,9 +6,11 @@ from correlation.incident_rules import (
     calculate_severity, 
     INCIDENT_RESOLUTION_TIMEOUT
 )
+from memory.vector_store import VectorStore
+from memory.embedder import embed
 
 class Incident:
-    def __init__(self, services: Set[str], signals: Set[str], started_at: datetime):
+    def __init__(self, services: Set[str], signals: Set[str], started_at: datetime, similar_incidents: List[Dict] = None):
         self.incident_id = f"INC-{uuid.uuid4().hex[:8].upper()}"
         self.status = "OPEN"
         self.started_at = started_at
@@ -17,6 +19,12 @@ class Incident:
         self.signals = signals
         self.severity = calculate_severity(signals)
         self.window_count = 1
+        
+        # Memory / Vector fields
+        self.summary_text = ""
+        self.resolution = ""
+        self.resolved_at: Optional[datetime] = None
+        self.similar_incidents = similar_incidents if similar_incidents else []
 
     def to_dict(self):
         return {
@@ -24,10 +32,14 @@ class Incident:
             "status": self.status,
             "started_at": self.started_at.isoformat(),
             "last_seen_at": self.last_seen_at.isoformat(),
+            "resolved_at": self.resolved_at.isoformat() if self.resolved_at else None,
             "services": list(self.services),
             "signals": list(self.signals),
             "severity": self.severity,
-            "window_count": self.window_count
+            "window_count": self.window_count,
+            "summary_text": self.summary_text,
+            "resolution": self.resolution,
+            "similar_incidents": self.similar_incidents
         }
 
 class IncidentManager:
@@ -35,6 +47,7 @@ class IncidentManager:
     
     def __init__(self):
         self.active_incident: Optional[Incident] = None
+        self.vector_store = VectorStore() # Initialize vector store (loads from file or empty)
 
     @classmethod
     def get_instance(cls):
@@ -58,10 +71,6 @@ class IncidentManager:
 
         # 1. Manage existing incident (Timeout Check)
         if self.active_incident:
-             # Check if we naturally timed out (no signals for N windows)
-             # But valid signals extend the life, so we check this first?
-             # Actually, if we have an anomaly NOW, we might extend it.
-             # If we DO NOT have an anomaly, we check if we should resolve.
              pass
 
         # 2. Logic Flow
@@ -71,10 +80,7 @@ class IncidentManager:
                 if is_correlated(self.active_incident.last_seen_at, now):
                     # ONGOING Update
                     if self.active_incident.status == "RESOLVED":
-                        # If it was resolved but a new anomaly comes in QUICKLY (though resolved means implied timeout)
-                        # The logic says: "New anomaly after resolve -> new incident_id"
-                        # "Transitions: RESOLVED -> no signals for N windows"
-                        # So if it IS resolved, it means it already timed out. So this must be a NEW incident.
+                        # Resolved -> New anomaly -> New Incident
                         self._create_new_incident(affected_services_set, current_signals, now)
                     else:
                         # Truly ONGOING
@@ -85,8 +91,7 @@ class IncidentManager:
                         self.active_incident.severity = calculate_severity(self.active_incident.signals)
                         self.active_incident.window_count += 1
                 else:
-                    # Too much time passed (though anomaly logic usually runs every minute, so this is rare if we check often)
-                    # But if we missed checks, treat as new.
+                    # Too much time passed -> New Incident
                     self._create_new_incident(affected_services_set, current_signals, now)
             else:
                 # No active incident -> Create NEW
@@ -99,8 +104,60 @@ class IncidentManager:
                 time_since_last = (now - self.active_incident.last_seen_at).total_seconds()
                 if time_since_last > INCIDENT_RESOLUTION_TIMEOUT:
                     self.active_incident.status = "RESOLVED"
+                    self.active_incident.resolved_at = now
+                    self.active_incident.resolution = "Traffic subsided automatically" # Default resolution for now
+                    self.active_incident.summary_text = self._generate_summary(self.active_incident)
+                    
+                    # STORE IN VECTOR MEMORY
+                    self._store_incident(self.active_incident)
+                    
                     # We keep it as active_incident so it can be returned by API, 
                     # but next anomaly will trigger a NEW one.
 
+    def _generate_summary(self, incident: Incident) -> str:
+        """Simple template-based summary generator."""
+        services_str = ", ".join(incident.services)
+        signals_str = ", ".join(incident.signals)
+        duration = (incident.last_seen_at - incident.started_at).total_seconds()
+        return (f"{incident.severity} severity incident involving {services_str}. "
+                f"Signals observed: {signals_str}. Duration: {duration}s. "
+                f"Resolved after traffic normalized.")
+
+    def _store_incident(self, incident: Incident):
+        """Embeds and stores the resolved incident."""
+        try:
+            vector = embed(incident.summary_text)
+            meta = {
+                "incident_id": incident.incident_id,
+                "summary_text": incident.summary_text,
+                "signals": list(incident.signals),
+                "services": list(incident.services),
+                "severity": incident.severity,
+                "resolution": incident.resolution,
+                "resolved_at": incident.resolved_at.isoformat()
+            }
+            self.vector_store.add(vector, meta)
+            print(f"Stored incident {incident.incident_id} in vector memory.")
+        except Exception as e:
+            print(f"Failed to store incident: {e}")
+
     def _create_new_incident(self, services: Set[str], signals: Set[str], now: datetime):
-        self.active_incident = Incident(services, signals, now)
+        # 1. Draft the potential new incident to generate a query summary
+        temp_services_str = ", ".join(services)
+        temp_signals_str = ", ".join(signals)
+        query_text = f"Incident involving {temp_services_str} with signals {temp_signals_str}"
+        
+        # 2. Query Memory (Once on creation)
+        try:
+            query_vector = embed(query_text)
+            similar = self.vector_store.search(query_vector, k=3)
+            # Guardrail: Exclude self (though this is new, strict safety)
+            # Since this is a new object, it has no ID yet that is in the store.
+            # But just in case we verify IDs if they existed. 
+            pass 
+        except Exception as e:
+            print(f"Vector search failed: {e}")
+            similar = []
+
+        # 3. Create Incident with cached similarity
+        self.active_incident = Incident(services, signals, now, similar_incidents=similar)
