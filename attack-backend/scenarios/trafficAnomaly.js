@@ -6,7 +6,7 @@ const random = require("../utils/random");
 
 function getEmissionParams(t) {
     return {
-        rate: clamp(5 + Math.floor(t / 10), 5, 15),
+        rate: clamp(50 + Math.floor(t / 2), 50, 200),
         latency: 200 + random(0, 100),
         pError: 0.01
     };
