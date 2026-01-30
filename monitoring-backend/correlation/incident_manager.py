@@ -15,6 +15,10 @@ class ApprovalStatus(str, Enum):
     APPROVED = "APPROVED"
     REJECTED = "REJECTED"
 
+class ApprovalLockError(Exception):
+    """Raised when attempting to modify an already decided approval."""
+    pass
+
 class Incident:
     def __init__(self, services: Set[str], signals: Set[str], started_at: datetime, similar_incidents: List[Dict] = None):
         self.incident_id = f"INC-{uuid.uuid4().hex[:8].upper()}"
@@ -90,24 +94,27 @@ class IncidentManager:
         if not self.active_incident or self.active_incident.incident_id != incident_id:
              raise ValueError(f"Incident {incident_id} not found or not active")
         
+        # Lock Check
+        if self.active_incident.approval["status"] != ApprovalStatus.PENDING.value:
+            raise ApprovalLockError("Approval already decided")
+
         # Validation Rules
         if not self.active_incident.reasoning:
             raise ValueError("Cannot approve incident without reasoning")
             
-        # Check Confidence Threshold? (Optional, but user mentioned it)
-        # Assuming reasoning has 'confidence_score' or 'confidence'
-        confidence = self.active_incident.reasoning.get("confidence", 0)
-        # Configurable threshold could go here. Let's say 0.6 as per prompt example.
+        # Check Confidence Threshold
+        # Using final_confidence as requested
+        confidence = self.active_incident.reasoning.get("final_confidence", 0)
+        
         if confidence < 0.6:
-             # Just a warning or strict block? User said "Confidence >= configurable threshold".
-             # Strict block for now.
              raise ValueError(f"Confidence score {confidence} is below threshold 0.6")
 
         self.active_incident.approval = {
             "status": ApprovalStatus.APPROVED.value,
             "actor": actor,
             "comment": comment,
-            "decided_at": datetime.utcnow().isoformat()
+            "decided_at": datetime.utcnow().isoformat(),
+            "approved_with_confidence": confidence
         }
         return self.active_incident.to_dict()
 
@@ -115,6 +122,10 @@ class IncidentManager:
         """Rejects the incident."""
         if not self.active_incident or self.active_incident.incident_id != incident_id:
              raise ValueError(f"Incident {incident_id} not found or not active")
+        
+        # Lock Check
+        if self.active_incident.approval["status"] != ApprovalStatus.PENDING.value:
+            raise ApprovalLockError("Approval already decided")
         
         # We can reject even without reasoning? Probably yes, explicitly rejecting garbage.
         # But prompt said "Approval is allowed only if reasoning has already been generated"

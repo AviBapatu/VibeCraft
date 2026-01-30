@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Body, HTTPException
-from correlation.incident_manager import IncidentManager, ApprovalStatus
+from correlation.incident_manager import IncidentManager, ApprovalStatus, ApprovalLockError
 from pydantic import BaseModel
 from typing import Optional, Literal
 from datetime import datetime
@@ -58,6 +58,8 @@ def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
             "approval_status": result["approval"]["status"],
             "approved_at": result["approval"].get("decided_at")
         }
+    except ApprovalLockError as e:
+        raise HTTPException(status_code=409, detail=str(e))
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
