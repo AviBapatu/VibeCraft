@@ -9,6 +9,8 @@ app = FastAPI(title="Monitoring Backend")
 
 app.include_router(ingest_router)
 app.include_router(anomaly_router)
+from api.incident import router as incident_router
+app.include_router(incident_router)
 
 @app.get("/health")
 def health():
