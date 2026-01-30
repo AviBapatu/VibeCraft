@@ -1,7 +1,22 @@
-from fastapi import APIRouter
-from correlation.incident_manager import IncidentManager
+from fastapi import APIRouter, Body, HTTPException
+from correlation.incident_manager import IncidentManager, ApprovalStatus
+from pydantic import BaseModel
+from typing import Optional, Literal
+from datetime import datetime
+from enum import Enum
 
 router = APIRouter(prefix="/incident", tags=["incident"])
+
+class ApprovalRequest(BaseModel):
+    incident_id: str
+    decision: Literal["APPROVE", "REJECT"]
+    actor: str
+    comment: Optional[str] = None
+
+class ApprovalResponse(BaseModel):
+    incident_id: str
+    approval_status: str
+    approved_at: Optional[str] = None
 
 @router.get("/current")
 def get_current_incident():
@@ -23,11 +38,33 @@ def get_similar_incidents():
         return {"similar_incidents": []}
     
     return {"similar_incidents": current.get("similar_incidents", [])}
+
+@router.post("/approve", response_model=ApprovalResponse)
+def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
+    """
+    Approves or Rejects an incident's recommended action.
+    Requires reasoning to be present and confidence threshold met.
+    """
+    manager = IncidentManager.get_instance()
     
+    try:
+        if request.decision == "APPROVE":
+            result = manager.approve_incident(request.incident_id, request.actor, request.comment)
+        else:
+            result = manager.reject_incident(request.incident_id, request.actor, request.comment)
+            
+        return {
+            "incident_id": request.incident_id,
+            "approval_status": result["approval"]["status"],
+            "approved_at": result["approval"].get("decided_at")
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 from reasoning.agent import ReasoningAgent, IncidentReasoningRequest, ReasoningResult
-from fastapi import HTTPException
 
 @router.post("/reason", response_model=ReasoningResult)
 def reason_about_incident():
@@ -49,5 +86,8 @@ def reason_about_incident():
     
     # Analyze
     result = agent.analyze_incident(current_data, similar)
+    
+    # Store reasoning in the incident so it can be approved later
+    manager.update_reasoning(current_data["incident_id"], result)
     
     return result
