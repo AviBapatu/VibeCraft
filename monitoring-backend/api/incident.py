@@ -23,3 +23,31 @@ def get_similar_incidents():
         return {"similar_incidents": []}
     
     return {"similar_incidents": current.get("similar_incidents", [])}
+    
+
+
+from reasoning.agent import ReasoningAgent, IncidentReasoningRequest, ReasoningResult
+from fastapi import HTTPException
+
+@router.post("/reason", response_model=ReasoningResult)
+def reason_about_incident():
+    """
+    Analyzes the current active incident using the Reasoning Agent.
+    """
+    manager = IncidentManager.get_instance()
+    current_data = manager.get_current()
+    
+    if not current_data:
+        raise HTTPException(status_code=409, detail="No active incident to reason about")
+        
+    # Extract similar incidents from the current incident data
+    # (The IncidentManager populated this on creation/update)
+    similar = current_data.get("similar_incidents", [])
+    
+    # Initialize Agent
+    agent = ReasoningAgent()
+    
+    # Analyze
+    result = agent.analyze_incident(current_data, similar)
+    
+    return result
