@@ -8,9 +8,11 @@ from detection.aggregation import (
     compute_log_rate,
     compute_avg_retry
 )
+from detection.reset import get_detection_reset_time
 
 def detect_anomaly(db: Session):
     now = datetime.now(timezone.utc)
+    reset_at = get_detection_reset_time()
     
     # Define windows
     short_window_seconds = 60
@@ -20,8 +22,31 @@ def detect_anomaly(db: Session):
     baseline_end = short_start
     baseline_start = now - timedelta(minutes=baseline_window_minutes)
     
+    # Apply Reset Logic
+    if reset_at:
+        # Ensure windows don't go back before reset time
+        # Timestamps in DB are UTC (usually), ensure reset_at is comparable
+        if reset_at.tzinfo is None:
+            reset_at = reset_at.replace(tzinfo=timezone.utc)
+            
+        if short_start < reset_at:
+            short_start = reset_at
+        
+        if baseline_start < reset_at:
+            baseline_start = reset_at
+            
+        # If window start is now after window end (because reset was very recent), 
+        # we have 0 logs for that window.
+        if short_start >= now:
+            short_start = now # empty window
+            
+        if baseline_start >= baseline_end:
+            baseline_start = baseline_end # empty window
+
     # Calculate actual duration for baseline (9 minutes)
     baseline_duration_seconds = (baseline_end - baseline_start).total_seconds()
+    if baseline_duration_seconds < 0:
+        baseline_duration_seconds = 0
 
     # Format timestamps for DB query (ISO format)
     # Assuming DB stores as ISO string, we format as such.

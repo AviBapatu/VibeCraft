@@ -103,7 +103,11 @@ const SimulatorPage = () => {
         } catch (err) {
             console.error('Failed to start scenario:', err);
             // Even if it fails, we keep isRunning as false
-            setError('Failed to start simulation. Check backend connection.');
+            if (err.response && err.response.status === 409) {
+                setError('Another scenario is already running. Please stop it first.');
+            } else {
+                setError('Failed to start simulation. Check backend connection.');
+            }
             setIsRunning(false);
             setStartedAt(null);
         }
@@ -124,14 +128,47 @@ const SimulatorPage = () => {
         }
     };
 
+    const handleReset = async () => {
+        if (confirm("Are you sure you want to reset the incident state? This is for DEMO purposes only.")) {
+            try {
+                await simulatorApi.resetDemoState();
+                alert("Demo state cleared. System ready for next test.");
+            } catch (err) {
+                console.error("Reset failed:", err);
+                alert("Failed to reset demo state. Check backend logs.");
+            }
+        }
+    };
+
+
     return (
         <div className="container">
             <header style={{ marginBottom: '2rem' }}>
                 <h1 style={{ margin: 0 }}>VibeCraft Attack Simulator</h1>
-                <p style={{ color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
-                    Fault Injection Control Panel
-                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <p style={{ color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
+                        Fault Injection Control Panel
+                    </p>
+                    <button
+                        className="btn"
+                        onClick={handleReset}
+                        disabled={isRunning}
+                        title={isRunning ? "Stop the scenario before resetting demo state" : ""}
+                        style={{
+                            backgroundColor: isRunning ? 'var(--text-secondary)' : '#ef4444',
+                            color: 'white',
+                            border: '1px solid #ef4444',
+                            opacity: isRunning ? 0.5 : 1,
+                            cursor: isRunning ? 'not-allowed' : 'pointer',
+                            fontSize: '0.9rem',
+                            padding: '0.5rem 1rem'
+                        }}
+                    >
+                        Reset Incident State (Demo Only)
+                    </button>
+                </div>
             </header>
+
 
             <SimulatorStatus isRunning={isRunning} scenarioName={selectedScenario?.title} />
 

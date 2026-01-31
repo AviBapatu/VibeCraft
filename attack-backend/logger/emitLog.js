@@ -26,9 +26,15 @@ async function sendToMonitoring(log) {
     }
 }
 
+const { getActiveScenario } = require("../attackState");
+
 function emitLog(log) {
-    sendToConsole(log);
-    sendToMonitoring(log);
+    const enrichedLog = {
+        ...log,
+        scenario: getActiveScenario()
+    };
+    sendToConsole(enrichedLog);
+    sendToMonitoring(enrichedLog);
 }
 
 module.exports = emitLog;
