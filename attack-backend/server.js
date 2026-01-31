@@ -1,5 +1,5 @@
 const express = require("express");
-const { startScenario, stopScenario, startBaseline } = require("./scenarioManager");
+const { startScenario, stopScenario, startBaseline, getStatus } = require("./scenarioManager");
 
 const authFailure = require("./scenarios/authFailure");
 const latencyDegradation = require("./scenarios/latencyDegradation");
@@ -19,6 +19,11 @@ const scenarioMap = {
     "traffic-anomaly": trafficAnomaly,
     "cascading-failure": cascadingFailure
 };
+
+app.get("/attack/status", (req, res) => {
+    const status = getStatus();
+    res.json(status);
+});
 
 app.post("/attack/start/:name", (req, res) => {
     const { name } = req.params;
