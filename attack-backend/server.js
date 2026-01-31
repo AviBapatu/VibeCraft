@@ -8,6 +8,8 @@ const trafficAnomaly = require("./scenarios/trafficAnomaly");
 const cascadingFailure = require("./scenarios/cascadingFailure");
 
 const app = express();
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 
 const scenarioMap = {
