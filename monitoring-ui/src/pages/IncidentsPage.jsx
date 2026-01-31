@@ -66,7 +66,11 @@ export default function IncidentsPage() {
                                 {incident.approval?.status}
                             </span>
                         </td>
-                        <td>{new Date(incident.opened_at).toLocaleString()}</td>
+                        <td>
+                            {incident.opened_at
+                                ? new Date(incident.opened_at).toLocaleString()
+                                : "—"}
+                        </td>
                         <td>
                             <Link to={`/incident/${incident.incident_id}`} className="view-link">
                                 View
