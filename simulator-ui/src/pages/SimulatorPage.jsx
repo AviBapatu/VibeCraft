@@ -34,19 +34,56 @@ const SCENARIOS = [
         title: 'Cascading Failure',
         description: 'Simulates a failure in a dependency that propagates to upstream services.',
         signals: ['Dependency 500s', 'Retry Storm', 'Circuit Breaker Open']
-    }
+    },
 ];
 
 const SimulatorPage = () => {
     const [selectedScenario, setSelectedScenario] = useState(null);
     const [isRunning, setIsRunning] = useState(false);
     const [error, setError] = useState(null);
+    const [startedAt, setStartedAt] = useState(null);
+    const [elapsedSeconds, setElapsedSeconds] = useState(0);
 
-    // Stateless reload: Ensure we start fresh
+    // Sync with backend state on load
     useEffect(() => {
-        setIsRunning(false);
-        setSelectedScenario(null);
+        const syncState = async () => {
+            try {
+                const status = await simulatorApi.getAttackStatus();
+                if (status && status.scenario) {
+                    const scenario = SCENARIOS.find(s => s.id === status.scenario);
+                    if (scenario) {
+                        setSelectedScenario(scenario);
+                        setIsRunning(true);
+                        if (status.started_at) {
+                            setStartedAt(status.started_at);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to sync attack status:', err);
+                // Don't show error to user immediately on load, just log it
+            }
+        };
+
+        syncState();
     }, []);
+
+    // Timer logic
+    useEffect(() => {
+        let interval;
+        if (isRunning && startedAt) {
+            // Immediate update
+            setElapsedSeconds(Math.floor((Date.now() - startedAt) / 1000));
+
+            interval = setInterval(() => {
+                setElapsedSeconds(Math.floor((Date.now() - startedAt) / 1000));
+            }, 1000);
+        } else {
+            setElapsedSeconds(0);
+        }
+
+        return () => clearInterval(interval);
+    }, [isRunning, startedAt]);
 
     const handleSelect = (scenario) => {
         if (!isRunning) {
@@ -62,10 +99,13 @@ const SimulatorPage = () => {
             setError(null);
             await simulatorApi.startScenario(selectedScenario.id);
             setIsRunning(true);
+            setStartedAt(Date.now()); // Optimistic update, backend is source of truth
         } catch (err) {
             console.error('Failed to start scenario:', err);
             // Even if it fails, we keep isRunning as false
             setError('Failed to start simulation. Check backend connection.');
+            setIsRunning(false);
+            setStartedAt(null);
         }
     };
 
@@ -80,6 +120,7 @@ const SimulatorPage = () => {
         } finally {
             // We always reset UI state to stopped on stop click, per "stateless" philosophy
             setIsRunning(false);
+            setStartedAt(null);
         }
     };
 
@@ -93,6 +134,18 @@ const SimulatorPage = () => {
             </header>
 
             <SimulatorStatus isRunning={isRunning} scenarioName={selectedScenario?.title} />
+
+            {isRunning && (
+                <div style={{
+                    textAlign: 'center',
+                    marginBottom: '1rem',
+                    fontSize: '1.2rem',
+                    fontWeight: 'bold',
+                    color: 'var(--primary)'
+                }}>
+                    Running for: {elapsedSeconds}s
+                </div>
+            )}
 
             {error && (
                 <div style={{ padding: '1rem', backgroundColor: 'rgba(239, 68, 68, 0.2)', color: 'var(--text-primary)', borderRadius: '0.5rem', marginBottom: '1rem', border: '1px solid var(--danger)' }}>

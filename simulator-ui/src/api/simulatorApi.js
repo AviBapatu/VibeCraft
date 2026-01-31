@@ -10,5 +10,9 @@ export const simulatorApi = {
     stopScenario: async (name) => {
         const response = await axios.post(`${API_BASE_URL}/attack/stop/${name}`);
         return response.data;
+    },
+    getAttackStatus: async () => {
+        const response = await axios.get(`${API_BASE_URL}/attack/status`);
+        return response.data;
     }
 };
