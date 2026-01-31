@@ -9,6 +9,7 @@ from correlation.incident_rules import (
 )
 from memory.vector_store import VectorStore
 from memory.embedder import embed
+from debug.pipeline_state import update_state
 
 class ApprovalStatus(str, Enum):
     PENDING = "PENDING"
@@ -146,6 +147,8 @@ class IncidentManager:
         """
         Updates the incident state based on anomaly detection results.
         """
+        update_state(last_incident_update_at=datetime.utcnow().isoformat())
+
         is_anomaly = anomaly_result.get("anomaly", False)
         current_signals = set(anomaly_result.get("signals", []))
         affected_services_set = set(affected_services)

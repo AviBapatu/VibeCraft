@@ -21,7 +21,7 @@ export default function IncidentDetailPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch all data
+        // Initial fetch of everything
         Promise.all([
             getCurrentIncident(),
             getSimilarIncidents(),
@@ -32,6 +32,16 @@ export default function IncidentDetailPage() {
             setReasoning(reasoningData);
             setLoading(false);
         });
+
+        // Poll incident status for updates
+        const interval = setInterval(() => {
+            getCurrentIncident().then((data) => {
+                // Only update if we have an incident to avoid flickering if it disappears momentarily
+                if (data) setIncident(data);
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
     }, [id]);
 
     if (loading) {
