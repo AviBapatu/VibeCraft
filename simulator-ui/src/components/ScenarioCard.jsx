@@ -1,40 +1,37 @@
 import React from 'react';
+import './ScenarioCard.css';
 
 const ScenarioCard = ({ scenario, isSelected, onSelect, disabled }) => {
     return (
         <div
-            className={`card ${isSelected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
+            className={`scenario-card ${isSelected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
             onClick={() => !disabled && onSelect(scenario)}
-            style={{
-                cursor: disabled ? 'not-allowed' : 'pointer',
-                borderColor: isSelected ? 'var(--accent-primary)' : 'var(--border)',
-                backgroundColor: isSelected ? 'var(--bg-secondary)' : 'rgba(30, 41, 59, 0.5)',
-                opacity: disabled ? 0.6 : 1
-            }}
         >
-            <h3 style={{ marginTop: 0, color: 'var(--text-primary)' }}>{scenario.title}</h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{scenario.description}</p>
+            <div className="card-category">ATTACK SCENARIO</div>
+            <div className="card-header">
+                <h3 className="card-title">{scenario.title}</h3>
+            </div>
+            <p className="card-description">{scenario.description}</p>
 
-            <div style={{ marginTop: '1rem' }}>
-                <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Signals:</h4>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <div className="signals-section">
+                <h4 className="signals-label">Signals:</h4>
+                <div className="signals-list">
                     {scenario.signals.map((signal, idx) => (
-                        <span
-                            key={idx}
-                            style={{
-                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                                color: 'var(--accent-primary)',
-                                padding: '0.25rem 0.5rem',
-                                borderRadius: '0.25rem',
-                                fontSize: '0.75rem',
-                                border: '1px solid rgba(59, 130, 246, 0.2)'
-                            }}
-                        >
+                        <span key={idx} className="signal-badge">
                             {signal}
                         </span>
                     ))}
                 </div>
             </div>
+
+            {isSelected && (
+                <div className="selected-indicator">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill="currentColor"/>
+                    </svg>
+                    Selected
+                </div>
+            )}
         </div>
     );
 };

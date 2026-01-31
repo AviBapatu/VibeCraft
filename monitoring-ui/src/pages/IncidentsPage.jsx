@@ -3,6 +3,8 @@ import { getCurrentIncident } from "../api/incidentApi";
 import { getAttackStatus, getPipelineStatus } from "../api/monitoringApi";
 import { Link } from "react-router-dom";
 import StatusBanner from "../components/StatusBanner";
+import LoadingSpinner from "../components/LoadingSpinner";
+import "./IncidentsPage.css";
 
 export default function IncidentsPage() {
     const [incident, setIncident] = useState(null);
@@ -28,24 +30,26 @@ export default function IncidentsPage() {
             }
         };
 
-        fetchData(); // Initial fetch
-        const interval = setInterval(fetchData, 2000); // Poll every 2s
+        fetchData();
+        const interval = setInterval(fetchData, 2000);
 
         return () => clearInterval(interval);
     }, []);
 
     if (loading) {
         return (
-            <div className="page-container p-6">
-                <h1 className="text-2xl font-bold mb-4">Incident Monitor</h1>
-                <p>Loading...</p>
+            <div className="page-container">
+                <LoadingSpinner text="Loading dashboard..." />
             </div>
         );
     }
 
     return (
-        <div className="page-container p-6">
-            <h1 className="text-2xl font-bold mb-6">Incident Monitor</h1>
+        <div className="page-container">
+            <div className="page-header">
+                <h1 className="page-title">Incident Monitor</h1>
+                <p className="page-subtitle">Real-time system monitoring and incident management</p>
+            </div>
 
             <StatusBanner
                 attackStatus={attackStatus}
@@ -54,53 +58,60 @@ export default function IncidentsPage() {
             />
 
             {!incident ? (
-                <div className="healthy-state mt-8 text-center p-10 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-500">✓ No active incidents. System healthy.</p>
+                <div className="healthy-state-card">
+                    <div className="healthy-icon">✓</div>
+                    <h2>System Healthy</h2>
+                    <p>No active incidents detected. All systems operating normally.</p>
                 </div>
             ) : (
-                <div className="overflow-x-auto">
-                    <table className="incidents-table w-full text-left border-collapse">
-                        <thead>
-                            <tr className="border-b border-gray-200">
-                                <th className="p-3 font-semibold text-gray-700">Incident ID</th>
-                                <th className="p-3 font-semibold text-gray-700">Status</th>
-                                <th className="p-3 font-semibold text-gray-700">Severity</th>
-                                <th className="p-3 font-semibold text-gray-700">Approval</th>
-                                <th className="p-3 font-semibold text-gray-700">Started At</th>
-                                <th className="p-3 font-semibold text-gray-700">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="border-b border-gray-100 hover:bg-gray-50">
-                                <td className="p-3 text-gray-800">{incident.incident_id}</td>
-                                <td className="p-3">
-                                    <span className={`badge px-2 py-1 rounded text-xs font-semibold status-${incident.status?.toLowerCase()}`}>
+                <div className="incident-card-grid">
+                    <div className="incident-card featured">
+                        <div className="card-category">INCIDENT DETECTED</div>
+                        <div className="card-header">
+                            <h2 className="card-title">Active Incident</h2>
+                            <div className="card-badge new">New</div>
+                        </div>
+                        <div className="card-content">
+                            <div className="card-info-grid">
+                                <div className="info-item">
+                                    <span className="info-label">Incident ID</span>
+                                    <span className="info-value">{incident.incident_id}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Status</span>
+                                    <span className={`badge status-${incident.status?.toLowerCase()}`}>
                                         {incident.status}
                                     </span>
-                                </td>
-                                <td className="p-3">
-                                    <span className={`badge px-2 py-1 rounded text-xs font-semibold severity-${incident.severity?.toLowerCase()}`}>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Severity</span>
+                                    <span className={`badge severity-${incident.severity?.toLowerCase()}`}>
                                         {incident.severity}
                                     </span>
-                                </td>
-                                <td className="p-3">
-                                    <span className={`badge px-2 py-1 rounded text-xs font-semibold approval-${incident.approval?.status?.toLowerCase()}`}>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Approval</span>
+                                    <span className={`badge approval-${incident.approval?.status?.toLowerCase()}`}>
                                         {incident.approval?.status}
                                     </span>
-                                </td>
-                                <td className="p-3 text-gray-600">
-                                    {incident.opened_at
-                                        ? new Date(incident.opened_at).toLocaleString()
-                                        : "—"}
-                                </td>
-                                <td className="p-3">
-                                    <Link to={`/incident/${incident.incident_id}`} className="view-link text-blue-600 hover:text-blue-800 font-medium">
-                                        View
-                                    </Link>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Started At</span>
+                                    <span className="info-value">
+                                        {incident.opened_at
+                                            ? new Date(incident.opened_at).toLocaleString()
+                                            : "—"}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <Link to={`/incident/${incident.incident_id}`} className="card-action">
+                            <span>View Details</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
             )}
         </div>

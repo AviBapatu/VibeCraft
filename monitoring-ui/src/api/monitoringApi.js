@@ -1,28 +1,23 @@
-const ATTACK_API_URL = 'http://localhost:4000';
-const MONITORING_API_URL = 'http://localhost:8000';
+const BASE_URL = "http://localhost:5000";
 
 export async function getAttackStatus() {
     try {
-        const response = await fetch(`${ATTACK_API_URL}/attack/status`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch attack status');
-        }
-        return await response.json();
+        const res = await fetch(`${BASE_URL}/attack/status`);
+        if (!res.ok) return null;
+        return res.json();
     } catch (error) {
-        console.error('Error fetching attack status:', error);
+        console.error("Failed to fetch attack status:", error);
         return null;
     }
 }
 
 export async function getPipelineStatus() {
     try {
-        const response = await fetch(`${MONITORING_API_URL}/debug/pipeline`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch pipeline status');
-        }
-        return await response.json();
+        const res = await fetch(`${BASE_URL}/pipeline/status`);
+        if (!res.ok) return null;
+        return res.json();
     } catch (error) {
-        console.error('Error fetching pipeline status:', error);
+        console.error("Failed to fetch pipeline status:", error);
         return null;
     }
 }

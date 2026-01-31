@@ -3,6 +3,7 @@ import ScenarioCard from '../components/ScenarioCard';
 import ScenarioControls from '../components/ScenarioControls';
 import SimulatorStatus from '../components/SimulatorStatus';
 import { simulatorApi } from '../api/simulatorApi';
+import './SimulatorPage.css';
 
 const SCENARIOS = [
     {
@@ -61,7 +62,6 @@ const SimulatorPage = () => {
                 }
             } catch (err) {
                 console.error('Failed to sync attack status:', err);
-                // Don't show error to user immediately on load, just log it
             }
         };
 
@@ -72,9 +72,7 @@ const SimulatorPage = () => {
     useEffect(() => {
         let interval;
         if (isRunning && startedAt) {
-            // Immediate update
             setElapsedSeconds(Math.floor((Date.now() - startedAt) / 1000));
-
             interval = setInterval(() => {
                 setElapsedSeconds(Math.floor((Date.now() - startedAt) / 1000));
             }, 1000);
@@ -99,10 +97,9 @@ const SimulatorPage = () => {
             setError(null);
             await simulatorApi.startScenario(selectedScenario.id);
             setIsRunning(true);
-            setStartedAt(Date.now()); // Optimistic update, backend is source of truth
+            setStartedAt(Date.now());
         } catch (err) {
             console.error('Failed to start scenario:', err);
-            // Even if it fails, we keep isRunning as false
             if (err.response && err.response.status === 409) {
                 setError('Another scenario is already running. Please stop it first.');
             } else {
@@ -122,7 +119,6 @@ const SimulatorPage = () => {
             console.error('Failed to stop scenario:', err);
             setError('Failed to stop simulation. Force reset recommended.');
         } finally {
-            // We always reset UI state to stopped on stop click, per "stateless" philosophy
             setIsRunning(false);
             setStartedAt(null);
         }
@@ -140,57 +136,40 @@ const SimulatorPage = () => {
         }
     };
 
-
     return (
         <div className="container">
-            <header style={{ marginBottom: '2rem' }}>
-                <h1 style={{ margin: 0 }}>VibeCraft Attack Simulator</h1>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <p style={{ color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
-                        Fault Injection Control Panel
-                    </p>
+            <header className="simulator-header">
+                <div className="header-content">
+                    <div>
+                        <h1 className="page-title">VibeCraft Attack Simulator</h1>
+                        <p className="page-subtitle">Fault Injection Control Panel</p>
+                    </div>
                     <button
-                        className="btn"
+                        className="btn btn-reset"
                         onClick={handleReset}
                         disabled={isRunning}
                         title={isRunning ? "Stop the scenario before resetting demo state" : ""}
-                        style={{
-                            backgroundColor: isRunning ? 'var(--text-secondary)' : '#ef4444',
-                            color: 'white',
-                            border: '1px solid #ef4444',
-                            opacity: isRunning ? 0.5 : 1,
-                            cursor: isRunning ? 'not-allowed' : 'pointer',
-                            fontSize: '0.9rem',
-                            padding: '0.5rem 1rem'
-                        }}
                     >
                         Reset Incident State (Demo Only)
                     </button>
                 </div>
             </header>
 
-
             <SimulatorStatus isRunning={isRunning} scenarioName={selectedScenario?.title} />
 
             {isRunning && (
-                <div style={{
-                    textAlign: 'center',
-                    marginBottom: '1rem',
-                    fontSize: '1.2rem',
-                    fontWeight: 'bold',
-                    color: 'var(--primary)'
-                }}>
-                    Running for: {elapsedSeconds}s
+                <div className="timer-display">
+                    Running for: <span className="timer-value">{elapsedSeconds}s</span>
                 </div>
             )}
 
             {error && (
-                <div style={{ padding: '1rem', backgroundColor: 'rgba(239, 68, 68, 0.2)', color: 'var(--text-primary)', borderRadius: '0.5rem', marginBottom: '1rem', border: '1px solid var(--danger)' }}>
+                <div className="error-banner">
                     <strong>Error: </strong> {error}
                 </div>
             )}
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
+            <div className="scenarios-grid">
                 {SCENARIOS.map(scenario => (
                     <ScenarioCard
                         key={scenario.id}
@@ -202,7 +181,7 @@ const SimulatorPage = () => {
                 ))}
             </div>
 
-            <div style={{ position: 'sticky', bottom: '2rem', marginTop: '2rem' }}>
+            <div className="controls-container">
                 {selectedScenario ? (
                     <ScenarioControls
                         isRunning={isRunning}
@@ -211,8 +190,8 @@ const SimulatorPage = () => {
                         disabled={!selectedScenario}
                     />
                 ) : (
-                    <div className="card" style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
-                        Select a scenario above to configure the simulation.
+                    <div className="card empty-selection">
+                        <p>Select a scenario above to configure the simulation.</p>
                     </div>
                 )}
             </div>
