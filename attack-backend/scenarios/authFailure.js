@@ -6,10 +6,10 @@ const clamp = require("../utils/clamp");
 function getEmissionParams(t) {
     const pError = clamp(0.02 + (t / 120) * 0.6, 0.02, 0.6);
     return {
-        rate: clamp(1 + Math.floor(t / 20), 1, 10),
-        latency: 300 + t * 8,
+        rate: 3, // Fix 1: Flat rate
+        latency: 300 + clamp(t * 8, 0, 300), // Fix 1: 300 -> 600ms max
         pError,
-        retryCount: Math.floor(t / 30)
+        retryCount: Math.min(2, Math.floor(t / 60)) // Fix 1: Cap retries
     };
 }
 
