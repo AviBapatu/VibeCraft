@@ -101,5 +101,23 @@
     "severity": "HIGH",
     "resolution": "Traffic subsided automatically",
     "resolved_at": "2026-01-31T21:35:21.135635+00:00"
+  },
+  {
+    "incident_id": "INC-167EAA61",
+    "summary_text": "HIGH severity incident involving frontend, auth, database, payment. Signals observed: traffic_volume_spike, error_rate_spike, latency_degradation. Duration: 1039.499734s. Resolved after traffic normalized.",
+    "signals": [
+      "traffic_volume_spike",
+      "error_rate_spike",
+      "latency_degradation"
+    ],
+    "services": [
+      "frontend",
+      "auth",
+      "database",
+      "payment"
+    ],
+    "severity": "HIGH",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T22:06:43.834747+00:00"
   }
 ]
