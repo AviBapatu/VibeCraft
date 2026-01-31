@@ -13,6 +13,8 @@ export default function AuthPage() {
     const [faceImage, setFaceImage] = useState(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
 
@@ -42,16 +44,40 @@ export default function AuthPage() {
                     setError(response.message || "Login failed");
                 }
             } else {
+                // Validate minimum password length first (increased to 8)
+                const MIN_PASSWORD_LENGTH = 8;
+                const MAX_PASSWORD_CHARS = 100;
+                
+                if (password.length < MIN_PASSWORD_LENGTH) {
+                    setError(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`);
+                    setLoading(false);
+                    return;
+                }
+                
+                // Check maximum character length (allow up to 100 characters)
+                // Bcrypt will handle byte truncation automatically if needed
+                if (password.length > MAX_PASSWORD_CHARS) {
+                    setError(`Password is too long. Maximum ${MAX_PASSWORD_CHARS} characters allowed.`);
+                    setLoading(false);
+                    return;
+                }
+                
+                // Validate password match
                 if (password !== confirmPassword) {
                     setError("Passwords do not match");
                     setLoading(false);
                     return;
                 }
+                
+                // Ensure face image is captured before proceeding
                 if (!faceImage) {
                     setError("Please capture your face image for verification");
                     setLoading(false);
                     return;
                 }
+                
+                // Only make API call after image is captured
+                // The image is already stored in state, now create the account
                 const response = await signup(email, password, faceImage);
                 if (response.success) {
                     setAuth({
@@ -85,6 +111,7 @@ export default function AuthPage() {
             {/* Right Side - Form */}
             <div className="auth-right-panel">
                 <div className="auth-card">
+                    <h2 className="auth-page-title">Incident Monitoring</h2>
                     <h1 className="auth-title">
                         {isLogin ? "Welcome Back" : "Create Account"}
                     </h1>
@@ -110,32 +137,104 @@ export default function AuthPage() {
 
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input
-                                id="password"
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter your password"
-                                required
-                                autoComplete={isLogin ? "current-password" : "new-password"}
-                                minLength={6}
-                            />
+                            <div className="password-input-wrapper">
+                                <input
+                                    id="password"
+                                    type={showPassword ? "text" : "password"}
+                                    value={password}
+                                    onChange={(e) => {
+                                        const newPassword = e.target.value;
+                                        setPassword(newPassword);
+                                        
+                                        // Clear previous errors when user starts typing
+                                        if (error) {
+                                            setError("");
+                                        }
+                                        
+                                        // Only validate maximum character length (100 chars)
+                                        // Bcrypt will handle byte truncation if needed
+                                        const MAX_CHARS = 100;
+                                        if (newPassword.length > MAX_CHARS) {
+                                            setError(`Password is too long. Maximum ${MAX_CHARS} characters allowed.`);
+                                        }
+                                    }}
+                                    placeholder="Enter your password (min 8 characters, max 100 characters)"
+                                    required
+                                    autoComplete={isLogin ? "current-password" : "new-password"}
+                                    minLength={8}
+                                    maxLength={100}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    aria-label={showPassword ? "Hide password" : "Show password"}
+                                >
+                                    {showPassword ? (
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                                        </svg>
+                                    ) : (
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    )}
+                                </button>
+                            </div>
                         </div>
 
                         {!isLogin && (
                             <>
                                 <div className="form-group">
                                     <label htmlFor="confirmPassword">Confirm Password</label>
-                                    <input
-                                        id="confirmPassword"
-                                        type="password"
-                                        value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
-                                        placeholder="Confirm your password"
-                                        required
-                                        autoComplete="new-password"
-                                        minLength={6}
-                                    />
+                                    <div className="password-input-wrapper">
+                                        <input
+                                            id="confirmPassword"
+                                            type={showConfirmPassword ? "text" : "password"}
+                                            value={confirmPassword}
+                                    onChange={(e) => {
+                                        const newConfirmPassword = e.target.value;
+                                        setConfirmPassword(newConfirmPassword);
+                                        
+                                        // Clear previous errors when user starts typing
+                                        if (error) {
+                                            setError("");
+                                        }
+                                        
+                                        // Validate maximum character length (100 chars)
+                                        // Bcrypt will handle byte truncation if needed
+                                        const MAX_CHARS = 100;
+                                        if (newConfirmPassword.length > MAX_CHARS) {
+                                            setError(`Password is too long. Maximum ${MAX_CHARS} characters allowed.`);
+                                        }
+                                    }}
+                                    placeholder="Confirm your password (min 8 characters, max 100 characters)"
+                                            required
+                                            autoComplete="new-password"
+                                    minLength={8}
+                                    maxLength={100}
+                                        />
+                                        <button
+                                            type="button"
+                                            className="password-toggle"
+                                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                            aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                                        >
+                                            {showConfirmPassword ? (
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                                </svg>
+                                            ) : (
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            )}
+                                        </button>
+                                    </div>
                                 </div>
                                 <FaceCapture
                                     onCapture={setFaceImage}
@@ -149,7 +248,7 @@ export default function AuthPage() {
                         <button
                             type="submit"
                             className="btn btn-primary"
-                            disabled={loading}
+                            disabled={loading || (!isLogin && !faceImage)}
                         >
                             {loading ? (
                                 <span className="btn-loading">
@@ -174,6 +273,8 @@ export default function AuthPage() {
                                     setPassword("");
                                     setConfirmPassword("");
                                     setFaceImage(null);
+                                    setShowPassword(false);
+                                    setShowConfirmPassword(false);
                                 }}
                             >
                                 {isLogin ? "Sign up" : "Sign in"}

@@ -1,97 +1,93 @@
 const BASE_URL = "http://localhost:5000";
 
-// For now, we'll use mock authentication
-// In production, this would connect to your backend auth endpoints
 export async function login(email, password) {
     try {
-        // Mock API call - replace with actual endpoint
-        // const res = await fetch(`${BASE_URL}/auth/login`, {
-        //     method: "POST",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify({ email, password })
-        // });
-        // if (!res.ok) {
-        //     const err = await res.json();
-        //     throw new Error(err.message || "Login failed");
-        // }
-        // return res.json();
+        // Send form data as required by OAuth2PasswordRequestForm
+        const formData = new FormData();
+        formData.append('username', email); // OAuth2 uses 'username' field for email
+        formData.append('password', password);
 
-        // Mock response for now
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
+        const res = await fetch(`${BASE_URL}/auth/login`, {
+            method: "POST",
+            body: formData
+        });
+
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({ detail: "Login failed" }));
+            return { 
+                success: false, 
+                message: err.detail || err.message || "Login failed" 
+            };
+        }
+
+        const data = await res.json();
         
-        // Simple validation
-        if (!email || !password) {
-            return { success: false, message: "Email and password are required" };
-        }
-
-        if (password.length < 6) {
-            return { success: false, message: "Password must be at least 6 characters" };
-        }
-
-        // Mock successful login
+        // Transform response to match expected format
         return {
             success: true,
-            user: {
-                id: "1",
-                email: email,
-                name: email.split("@")[0]
-            },
-            token: "mock_jwt_token_" + Date.now()
+            user: data.user,
+            token: data.access_token
         };
     } catch (error) {
-        console.error("Login error:", error);
-        return { success: false, message: error.message || "Login failed" };
+        // Don't show "Failed to fetch" - just return a generic error
+        console.log("Login request:", { email, passwordLength: password?.length || 0 });
+        return { 
+            success: false, 
+            message: "Unable to connect to server. Please check if the backend is running." 
+        };
     }
 }
 
 export async function signup(email, password, faceImage) {
     try {
-        // Mock API call - replace with actual endpoint
-        // const formData = new FormData();
-        // formData.append('email', email);
-        // formData.append('password', password);
-        // if (faceImage) {
-        //     const blob = await fetch(faceImage).then(r => r.blob());
-        //     formData.append('face_image', blob, 'face.jpg');
-        // }
-        // const res = await fetch(`${BASE_URL}/auth/signup`, {
-        //     method: "POST",
-        //     body: formData
-        // });
-        // if (!res.ok) {
-        //     const err = await res.json();
-        //     throw new Error(err.message || "Signup failed");
-        // }
-        // return res.json();
+        // Extract base64 string from data URL if needed
+        let faceImageBase64 = faceImage;
+        if (faceImage && faceImage.startsWith('data:image')) {
+            // Remove data URL prefix (e.g., "data:image/jpeg;base64,")
+            faceImageBase64 = faceImage.split(',')[1] || faceImage;
+        }
 
-        // Mock response for now
-        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API delay
+        // Validate face image exists
+        if (!faceImageBase64 || faceImageBase64.trim().length === 0) {
+            return {
+                success: false,
+                message: "Face image is required"
+            };
+        }
+
+        console.log("Signup request:", {
+            email: email,
+            passwordLength: password.length,
+            faceImageLength: faceImageBase64.length,
+            faceImagePreview: faceImageBase64.substring(0, 50) + "..."
+        });
+
+        const res = await fetch(`${BASE_URL}/auth/signup`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+                face_image: faceImageBase64
+            })
+        });
+
+        if (!res.ok) {
+            const err = await res.json();
+            console.error("Signup error response:", err);
+            return { 
+                success: false, 
+                message: err.detail || err.message || "Signup failed" 
+            };
+        }
+
+        const data = await res.json();
         
-        // Simple validation
-        if (!email || !password) {
-            return { success: false, message: "Email and password are required" };
-        }
-
-        if (password.length < 6) {
-            return { success: false, message: "Password must be at least 6 characters" };
-        }
-
-        if (!faceImage) {
-            return { success: false, message: "Face image is required for verification" };
-        }
-
-        // Mock successful signup with face image
-        console.log("Face image captured:", faceImage.substring(0, 50) + "...");
-        
+        // Transform response to match expected format
         return {
             success: true,
-            user: {
-                id: "1",
-                email: email,
-                name: email.split("@")[0],
-                faceImage: faceImage // Store face image in user object
-            },
-            token: "mock_jwt_token_" + Date.now()
+            user: data.user,
+            token: data.access_token
         };
     } catch (error) {
         console.error("Signup error:", error);
