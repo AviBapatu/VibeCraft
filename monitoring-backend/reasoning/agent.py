@@ -43,8 +43,12 @@ class ReasoningAgent:
             if "database" in services:
                 return "Database saturation or connection exhaustion"
 
+        # FIX 3: Cascading Failure (Auth -> DB Latency)
+        # If we see auth errors AND latency, it might be cascading
         if "error_rate_spike" in signals and "auth" in services:
-            return "Authentication failure"
+             if "latency_degradation" in signals:
+                 return "Cascading failure: Auth failure triggering database latency"
+             return "Authentication failure"
 
         return "System performance degradation"
 
@@ -161,6 +165,9 @@ class ReasoningAgent:
         
         if forbid_auth:
             prompt += "\nIMPORTANT:\nDo NOT attribute the issue to authentication unless there is explicit auth failure evidence."
+
+        if "Cascading failure" in primary_cause:
+             prompt += "\nIMPORTANT:\nThis looks like a CASCADING FAILURE. The root cause is likely Authentication, but it is causing downstream latency. Explain this relationship."
 
         prompt += """
         

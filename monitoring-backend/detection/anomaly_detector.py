@@ -8,10 +8,25 @@ from detection.aggregation import (
     compute_log_rate,
     compute_avg_retry
 )
-from detection.reset import get_detection_reset_time
+from detection.reset import get_detection_reset_time, DETECTION_RESET_AT, RESET_COOLDOWN_SECONDS
 
 def detect_anomaly(db: Session):
     now = datetime.now(timezone.utc)
+    
+    # Check for cooldown
+    reset_at_for_check = get_detection_reset_time()
+    if reset_at_for_check:
+        elapsed = (now - reset_at_for_check).total_seconds()
+        if elapsed < RESET_COOLDOWN_SECONDS:
+            return {
+                "anomaly": False,
+                "window": "last_60s",
+                "signals": [],
+                "reason": "Demo reset cooldown active",
+                "metrics": {},
+                "affected_services": []
+            }
+
     reset_at = get_detection_reset_time()
     
     # Define windows
@@ -104,8 +119,48 @@ def detect_anomaly(db: Session):
     if metrics["avg_retry_short"] > 2:
         signals.append("retry_storm")
         
-    # extract affected services
-    affected_services = list(set(log.service for log in short_logs))
+    # extract affected services (Fix 2: Dominant Services)
+    all_seen_services = list(set(log.service for log in short_logs))
+    affected_services = []
+    
+    # Calculate per-service stats for dominance check
+    service_stats = {}
+    for svc in all_seen_services:
+        svc_logs = [l for l in short_logs if l.service == svc]
+        if not svc_logs:
+            continue
+            
+        # Service Error Rate
+        err_count = sum(1 for l in svc_logs if l.level == "ERROR")
+        svc_error_rate = err_count / len(svc_logs)
+        
+        # Service Latency
+        latencies = [l.latency_ms for l in svc_logs if l.latency_ms is not None]
+        svc_avg_latency = sum(latencies) / len(latencies) if latencies else 0
+        
+        # Check Dominance Rules
+        # 1. High Error Rate (> 10%)
+        # 2. High Latency (> 1.5x GLOBAL baseline - simplified proxy)
+        if svc == "auth":
+            # Fix 4: Add debug visibility
+            levels = set(l.level for l in svc_logs)
+            print(f"[DETECTOR] auth_error_rate={svc_error_rate:.2f}, latency={svc_avg_latency:.2f}, count={len(svc_logs)}, errs={err_count}, levels={levels}")
+            
+            # Fix 1: Lower error-rate threshold for auth only
+            if svc_error_rate > 0.05:
+                affected_services.append(svc)
+                # Fix 2: Make auth failure a direct anomaly trigger
+                if "error_rate_spike" not in signals:
+                    signals.append("error_rate_spike")
+        else:
+            if svc_error_rate > 0.10:
+                affected_services.append(svc)
+            elif svc_avg_latency > metrics["avg_latency_baseline"] * 1.5:
+                affected_services.append(svc)
+            
+    # Fallback: If no dominant service found but anomaly exists, take all
+    if not affected_services:
+        affected_services = all_seen_services
         
     result = {
         "anomaly": len(signals) > 0,
