@@ -2,7 +2,9 @@ const BASE_URL = import.meta.env.VITE_MONITORING_BACKEND_URL || "http://localhos
 
 export async function getAttackStatus() {
     try {
-        const res = await fetch(`${BASE_URL}/attack/status`);
+        const res = await fetch(`${BASE_URL}/attack/status`, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         if (!res.ok) return null;
         return res.json();
     } catch (error) {
@@ -13,7 +15,9 @@ export async function getAttackStatus() {
 
 export async function getPipelineStatus() {
     try {
-        const res = await fetch(`${BASE_URL}/pipeline/status`);
+        const res = await fetch(`${BASE_URL}/pipeline/status`, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         if (!res.ok) return null;
         return res.json();
     } catch (error) {

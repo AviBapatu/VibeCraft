@@ -2,7 +2,9 @@ const BASE_URL = import.meta.env.VITE_MONITORING_BACKEND_URL || "http://localhos
 
 export async function getCurrentIncident() {
     try {
-        const res = await fetch(`${BASE_URL}/incident/current`);
+        const res = await fetch(`${BASE_URL}/incident/current`, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         if (!res.ok) return null;
         return res.json();
     } catch (error) {
@@ -13,7 +15,9 @@ export async function getCurrentIncident() {
 
 export async function getSimilarIncidents() {
     try {
-        const res = await fetch(`${BASE_URL}/incident/similar`);
+        const res = await fetch(`${BASE_URL}/incident/similar`, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         if (!res.ok) {
             return { similar_incidents: [] };
         }
@@ -27,7 +31,8 @@ export async function getSimilarIncidents() {
 export async function reasonIncident() {
     try {
         const res = await fetch(`${BASE_URL}/incident/reason`, {
-            method: "POST"
+            method: "POST",
+            headers: { "ngrok-skip-browser-warning": "true" }
         });
         if (!res.ok) {
             return null;
@@ -42,7 +47,10 @@ export async function reasonIncident() {
 export async function approveIncident(payload) {
     const res = await fetch(`${BASE_URL}/incident/approve`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "true"
+        },
         body: JSON.stringify(payload)
     });
 

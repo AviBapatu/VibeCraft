@@ -1096,3 +1096,549 @@ Stored incident INC-A8CDACCD in vector memory.
 [DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
 [DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
 [DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.56, count=180, errs=110, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.12, count=165, errs=106, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.33, count=150, errs=97, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=135, errs=87, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.08, count=120, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=580.95, count=105, errs=65, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.11, count=90, errs=56, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=75, errs=45, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=60, errs=36, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=45, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=30, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.87, latency=593.33, count=15, errs=13, levels={'ERROR', 'INFO'}
+Persisted VectorStore to memory/storage/index.faiss
+Stored incident INC-167EAA61 in vector memory.
+Error in detection loop: (sqlite3.OperationalError) disk I/O error
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:05:43.302980Z', '2026-01-31T23:06:43.302980Z')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:05:53.316255Z', '2026-01-31T23:06:53.316255Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:03.317183Z', '2026-01-31T23:07:03.317183Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:13.319191Z', '2026-01-31T23:07:13.319191Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:23.321097Z', '2026-01-31T23:07:23.321097Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:33.324383Z', '2026-01-31T23:07:33.324383Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:43.325902Z', '2026-01-31T23:07:43.325902Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:06:53.327825Z', '2026-01-31T23:07:53.327825Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:03.329790Z', '2026-01-31T23:08:03.329790Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:13.331310Z', '2026-01-31T23:08:13.331310Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:23.334231Z', '2026-01-31T23:08:23.334231Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:33.336763Z', '2026-01-31T23:08:33.336763Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:43.337787Z', '2026-01-31T23:08:43.337787Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:07:53.339925Z', '2026-01-31T23:08:53.339925Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:03.342829Z', '2026-01-31T23:09:03.342829Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:13.344793Z', '2026-01-31T23:09:13.344793Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:23.347638Z', '2026-01-31T23:09:23.347638Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:33.349765Z', '2026-01-31T23:09:33.349765Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:43.351189Z', '2026-01-31T23:09:43.351189Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:08:53.352949Z', '2026-01-31T23:09:53.352949Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:03.355061Z', '2026-01-31T23:10:03.355061Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:13.357420Z', '2026-01-31T23:10:13.357420Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:23.359831Z', '2026-01-31T23:10:23.359831Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:33.361757Z', '2026-01-31T23:10:33.361757Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:43.363478Z', '2026-01-31T23:10:43.363478Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:09:53.365113Z', '2026-01-31T23:10:53.365113Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:03.369986Z', '2026-01-31T23:11:03.369986Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:13.371130Z', '2026-01-31T23:11:13.371130Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:23.372881Z', '2026-01-31T23:11:23.372881Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:33.375487Z', '2026-01-31T23:11:33.375487Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:43.379037Z', '2026-01-31T23:11:43.379037Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:10:53.381510Z', '2026-01-31T23:11:53.381510Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:03.383341Z', '2026-01-31T23:12:03.383341Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:13.386277Z', '2026-01-31T23:12:13.386277Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:23.387972Z', '2026-01-31T23:12:23.387972Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:33.389109Z', '2026-01-31T23:12:33.389109Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:43.391095Z', '2026-01-31T23:12:43.391095Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:11:53.393131Z', '2026-01-31T23:12:53.393131Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:03.395268Z', '2026-01-31T23:13:03.395268Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:13.397416Z', '2026-01-31T23:13:13.397416Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:23.399596Z', '2026-01-31T23:13:23.399596Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:33.401717Z', '2026-01-31T23:13:33.401717Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:43.403384Z', '2026-01-31T23:13:43.403384Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:12:53.404392Z', '2026-01-31T23:13:53.404392Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:03.407427Z', '2026-01-31T23:14:03.407427Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:13.409740Z', '2026-01-31T23:14:13.409740Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:23.411341Z', '2026-01-31T23:14:23.411341Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:33.413594Z', '2026-01-31T23:14:33.413594Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:43.415228Z', '2026-01-31T23:14:43.415228Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:13:53.416759Z', '2026-01-31T23:14:53.416759Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:03.418024Z', '2026-01-31T23:15:03.418024Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:13.419660Z', '2026-01-31T23:15:13.419660Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:23.422981Z', '2026-01-31T23:15:23.422981Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:33.425247Z', '2026-01-31T23:15:33.425247Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:43.427794Z', '2026-01-31T23:15:43.427794Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:14:53.429939Z', '2026-01-31T23:15:53.429939Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:03.431738Z', '2026-01-31T23:16:03.431738Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:13.434514Z', '2026-01-31T23:16:13.434514Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:23.437156Z', '2026-01-31T23:16:23.437156Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:33.439814Z', '2026-01-31T23:16:33.439814Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:43.442042Z', '2026-01-31T23:16:43.442042Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:15:53.444349Z', '2026-01-31T23:16:53.444349Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:03.446079Z', '2026-01-31T23:17:03.446079Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:13.448125Z', '2026-01-31T23:17:13.448125Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:23.450157Z', '2026-01-31T23:17:23.450157Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:33.451750Z', '2026-01-31T23:17:33.451750Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:43.455069Z', '2026-01-31T23:17:43.455069Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:16:53.456512Z', '2026-01-31T23:17:53.456512Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:03.458555Z', '2026-01-31T23:18:03.458555Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:13.461152Z', '2026-01-31T23:18:13.461152Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:23.463594Z', '2026-01-31T23:18:23.463594Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:33.465603Z', '2026-01-31T23:18:33.465603Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:43.468734Z', '2026-01-31T23:18:43.468734Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:17:53.469810Z', '2026-01-31T23:18:53.469810Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:03.472339Z', '2026-01-31T23:19:03.472339Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:13.474470Z', '2026-01-31T23:19:13.474470Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:23.478198Z', '2026-01-31T23:19:23.478198Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:33.480938Z', '2026-01-31T23:19:33.480938Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:43.482973Z', '2026-01-31T23:19:43.482973Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:18:53.485293Z', '2026-01-31T23:19:53.485293Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:03.487032Z', '2026-01-31T23:20:03.487032Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:13.488233Z', '2026-01-31T23:20:13.488233Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:23.490320Z', '2026-01-31T23:20:23.490320Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:33.492722Z', '2026-01-31T23:20:33.492722Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:43.494495Z', '2026-01-31T23:20:43.494495Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:19:53.497170Z', '2026-01-31T23:20:53.497170Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:20:03.499262Z', '2026-01-31T23:21:03.499262Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Error in detection loop: (sqlite3.DatabaseError) database disk image is malformed
+[SQL: SELECT logs.id AS logs_id, logs.timestamp AS logs_timestamp, logs.service AS logs_service, logs.level AS logs_level, logs.message AS logs_message, logs.request_id AS logs_request_id, logs.ip AS logs_ip, logs.endpoint AS logs_endpoint, logs.method AS logs_method, logs.latency_ms AS logs_latency_ms, logs.status_code AS logs_status_code, logs.cpu_pct AS logs_cpu_pct, logs.memory_mb AS logs_memory_mb, logs.error_type AS logs_error_type, logs.retry_count AS logs_retry_count 
+FROM logs 
+WHERE logs.timestamp >= ? AND logs.timestamp < ?]
+[parameters: ('2026-01-31T23:20:13.500959Z', '2026-01-31T23:21:13.500959Z')]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)

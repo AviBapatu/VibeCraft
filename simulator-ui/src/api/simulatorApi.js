@@ -5,19 +5,27 @@ const MONITORING_BASE = import.meta.env.VITE_MONITORING_BACKEND_URL || 'http://l
 
 export const simulatorApi = {
     startScenario: async (name) => {
-        const response = await axios.post(`${API_BASE_URL}/attack/start/${name}`);
+        const response = await axios.post(`${API_BASE_URL}/attack/start/${name}`, {}, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         return response.data;
     },
     stopScenario: async (name) => {
-        const response = await axios.post(`${API_BASE_URL}/attack/stop/${name}`);
+        const response = await axios.post(`${API_BASE_URL}/attack/stop/${name}`, {}, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         return response.data;
     },
     getAttackStatus: async () => {
-        const response = await axios.get(`${API_BASE_URL}/attack/status`);
+        const response = await axios.get(`${API_BASE_URL}/attack/status`, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         return response.data;
     },
     resetDemoState: async () => {
-        const response = await axios.post(`${MONITORING_BASE}/demo/reset`);
+        const response = await axios.post(`${MONITORING_BASE}/demo/reset`, {}, {
+            headers: { "ngrok-skip-browser-warning": "true" }
+        });
         return response.data;
     }
 };
