@@ -35,18 +35,45 @@ class ReasoningAgent:
             print(f"GenAI Init Error: {e}")
             self.model = None
 
+    def _infer_primary_cause(self, signals: List[str], services: List[str]) -> str:
+        """
+        FIX 1: Deterministic Primary Cause
+        """
+        if "traffic_volume_spike" in signals and "latency_degradation" in signals:
+            if "database" in services:
+                return "Database saturation or connection exhaustion"
+
+        if "error_rate_spike" in signals and "auth" in services:
+            return "Authentication failure"
+
+        return "System performance degradation"
+
     def analyze_incident(self, current_incident: Dict[str, Any], similar_incidents: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
         Main entry point to reason about an incident.
         """
-        # PURE MOCK FOR VERIFICATION
-        return {
-            "hypothesis": "Auth failure due to JWT expiration or attack.",
-            "evidence": "High error rate in auth service.",
-            "recommended_actions": ["Rotate keys", "Block IP"],
-            "final_confidence": 0.85,
-            "uncertainty_notes": "Pure Mock"
-        }
+        # FIX: Debug Logging (Proof of fix)
+        print("=== REASONING INPUT ===")
+        print("Signals:", current_incident.get("signals"))
+        print("Services:", current_incident.get("services"))
+        print("Metrics:", current_incident.get("metrics") if "metrics" in current_incident else None)
+        print("=======================")
+
+        # FIX 4: Delay reasoning until incident stabilizes
+        # Using .get because dict might be passed, defaulting to 0 safety
+        window_count = current_incident.get("window_count", 0)
+        duration_seconds = current_incident.get("duration_seconds", 0)
+        
+        if window_count < 3 and duration_seconds < 30:
+            return {
+                "hypothesis": "Waiting for stable signals...",
+                "evidence": f"Incident detection window {window_count} < 3 or duration {duration_seconds}s < 30s.",
+                "recommended_actions": ["Wait for more data"],
+                "final_confidence": 0.0,
+                "uncertainty_notes": "WAITING_FOR_STABLE_SIGNALS"
+            }
+
+        return self._call_llm(current_incident, similar_incidents)
 
     def _calculate_deterministic_confidence(self, current: Dict[str, Any], similar: List[Dict[str, Any]]) -> float:
         if not similar:
@@ -86,17 +113,89 @@ class ReasoningAgent:
 
     def _call_llm(self, current: Dict[str, Any], similar: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
-        MOCK IMPLEMENTATION for Verification.
-        Bypasses actual API call to avoid dependency issues during test.
+        Real LLM call with deterministic guards (FIX 1, 2, 3).
         """
-        print("MOCKING LLM CALL")
-        return {
-            "hypothesis": "Auth failure due to JWT expiration or attack.",
-            "evidence": "High error rate in auth service.",
-            "recommended_actions": ["Rotate keys", "Block IP"],
-            "uncertainty_notes": "Mocked response",
-            "llm_confidence": 0.85
-        }
+        signals = current.get("signals", [])
+        services = current.get("services", [])
+        
+        # FIX 1: Deterministic Confidence
+        base_conf = self._calculate_deterministic_confidence(current, similar)
+
+        # FIX 1: Force primary cause
+        primary_cause = self._infer_primary_cause(signals, services)
+        
+        # FIX 2: Forbid auth (Dominance-based)
+        auth_related = (
+            "error_rate_spike" in signals and
+            "auth" in services
+        )
+
+        forbid_auth = False
+        if not auth_related:
+            forbid_auth = True
+
+        prompt = f"""
+        Analyze this system incident and provide a structured response.
+        
+        CURRENT INCIDENT CONTEXT:
+        Signals: {signals}
+        Services: {services}
+        Metrics: {current.get("metrics", {})}
+        
+        Primary inferred cause (rule-based): {primary_cause}
+        Deterministic confidence based on historical similarity: {base_conf:.2f}
+        Use this as a strong prior when reasoning.
+        
+        SIMILAR PAST INCIDENTS:
+        {similar}
+        
+        INSTRUCTIONS:
+        1. Formulate a hypothesis based on the evidence.
+        2. Provide specific evidence from the signals.
+        3. Recommend actionable steps.
+        4. Assign a confidence score (0.0 to 1.0).
+        
+        You MUST focus your hypothesis on the primary inferred cause unless strong evidence contradicts it.
+        Do NOT introduce unrelated subsystems.
+        """
+        
+        if forbid_auth:
+            prompt += "\nIMPORTANT:\nDo NOT attribute the issue to authentication unless there is explicit auth failure evidence."
+
+        prompt += """
+        
+        FORMAT YOUR RESPONSE EXACTLY AS:
+        Hypothesis: ...
+        Evidence: ...
+        Recommended Actions:
+        - ...
+        - ...
+        Uncertainty Notes: ...
+        Confidence Score: 0.X
+        """
+
+        if not self.model:
+            # Fallback if no API key, but respect primary cause
+            return {
+                "hypothesis": primary_cause,
+                "evidence": f"signals={signals} services={services} (LLM Disabled)",
+                "recommended_actions": ["Check logs", "Monitor metrics"],
+                "final_confidence": 0.5,
+                "uncertainty_notes": "LLM not initialized"
+            }
+
+        try:
+            response = self.model.generate_content(prompt)
+            return self._parse_llm_response(response.text)
+        except Exception as e:
+            print(f"LLM Error: {e}")
+            return {
+                "hypothesis": primary_cause,
+                "evidence": "LLM generation failed",
+                "recommended_actions": ["Check system manually"],
+                "final_confidence": 0.5,
+                "uncertainty_notes": str(e)
+            }
 
     def _parse_llm_response(self, text: str) -> Dict[str, Any]:
         """

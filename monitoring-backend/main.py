@@ -25,9 +25,13 @@ app.include_router(incident_router)
 from api.debug import router as debug_router
 app.include_router(debug_router)
 
+from api.demo import router as demo_router
+app.include_router(demo_router)
+
 @app.get("/health")
 def health():
     return {"status": "up"}
+
 
 import asyncio
 from datetime import datetime, timezone

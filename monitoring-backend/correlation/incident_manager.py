@@ -83,6 +83,17 @@ class IncidentManager:
             return self.active_incident.to_dict()
         return None
 
+    def reset_demo_state(self):
+        """
+        DEMO ONLY:
+        Explicitly clears active incident and internal state.
+        Does NOT write to vector memory.
+        """
+        self.active_incident = None
+        # If we had other stateful timers like 'last_anomaly_seen_at' in the manager, 
+        # we would reset them here. Currently state is encapsulated in active_incident.
+
+
     def update_reasoning(self, incident_id: str, reasoning: Dict):
         """Attaches reasoning to the active incident."""
         if self.active_incident and self.active_incident.incident_id == incident_id:

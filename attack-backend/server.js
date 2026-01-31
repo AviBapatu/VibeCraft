@@ -30,8 +30,12 @@ app.post("/attack/start/:name", (req, res) => {
     const scenarioFn = scenarioMap[name];
 
     if (scenarioFn) {
-        startScenario(name, scenarioFn);
-        res.json({ status: "started", scenario: name });
+        try {
+            startScenario(name, scenarioFn);
+            res.json({ status: "started", scenario: name });
+        } catch (err) {
+            res.status(409).json({ error: err.message });
+        }
     } else {
         res.status(404).json({ error: "Scenario not found" });
     }
