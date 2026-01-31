@@ -72,8 +72,15 @@ def detect_anomaly(db: Session):
     # Let's stick to str(datetime.isoformat()) which adds the 'T' and timezone if present.
     # The generated logs likely have ISO format. 
     
-    short_logs = get_logs_between(db, short_start.isoformat(), now.isoformat())
-    baseline_logs = get_logs_between(db, baseline_start.isoformat(), baseline_end.isoformat())
+    # Fix: DB stores timestamps with 'Z' suffix (Node.js style), but Python isoformat() uses '+00:00'.
+    # Since 'Z' > '+', the check 'log < end' fails because log ends with Z and end ends with +.
+    # We must format query timestamps to match DB format (or standard ISO with Z).
+    
+    def to_db_format(dt):
+        return dt.isoformat().replace("+00:00", "Z")
+        
+    short_logs = get_logs_between(db, to_db_format(short_start), to_db_format(now))
+    baseline_logs = get_logs_between(db, to_db_format(baseline_start), to_db_format(baseline_end))
     
     # Compute Metrics
     metrics = {}

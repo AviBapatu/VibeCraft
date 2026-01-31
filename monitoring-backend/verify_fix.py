@@ -47,6 +47,12 @@ def test_db_exhaustion():
     result = agent.analyze_incident(current, similar)
     print("Hypothesis:", result.get("hypothesis"))
     
+    # Verify Duration Calculation (Simulated check)
+    if current.get("duration_seconds", 0) < 30 and result.get("uncertainty_notes") == "WAITING_FOR_STABLE_SIGNALS":
+        print("✅ PASS: Correctly waiting for short duration")
+    elif current.get("duration_seconds", 0) >= 30 and result.get("uncertainty_notes") != "WAITING_FOR_STABLE_SIGNALS":
+         print("✅ PASS: Correctly proceeded for long duration")
+    
     if "Database" in result.get("hypothesis", ""):
         print("✅ PASS: Correctly identified DB issue")
     else:

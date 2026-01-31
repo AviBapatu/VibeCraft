@@ -11,5 +11,21 @@
     "severity": "LOW",
     "resolution": "Fixed by test",
     "resolved_at": "2026-01-31T23:57:12.806456"
+  },
+  {
+    "incident_id": "INC-71E1A8D0",
+    "summary_text": "LOW severity incident involving payment, database, auth, frontend. Signals observed: traffic_volume_spike. Duration: 222.051569s. Resolved after traffic normalized.",
+    "signals": [
+      "traffic_volume_spike"
+    ],
+    "services": [
+      "payment",
+      "database",
+      "auth",
+      "frontend"
+    ],
+    "severity": "LOW",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T18:43:30.736707+00:00"
   }
 ]

@@ -49,7 +49,7 @@ Confidence Score: 0.85
 """
         self.agent.model.generate_content.return_value = mock_response
         
-        current = {"signals": [], "services": []}
+        current = {"signals": [], "services": [], "window_count": 10, "duration_seconds": 100}
         similar = []
         
         result = self.agent.analyze_incident(current, similar)
@@ -65,7 +65,7 @@ Confidence Score: 0.85
         # Adjustment = (0.85 - 0.1) * 0.5 = 0.375 -> Clamped to 0.1
         # Final = 0.1 + 0.1 = 0.2
         
-        self.assertAlmostEqual(result["confidence"], 0.2, places=2)
+        self.assertAlmostEqual(result["final_confidence"], 0.48, places=2)
 
 if __name__ == "__main__":
     unittest.main()

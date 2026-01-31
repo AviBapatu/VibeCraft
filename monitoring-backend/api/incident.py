@@ -69,7 +69,7 @@ def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
 from reasoning.agent import ReasoningAgent, IncidentReasoningRequest, ReasoningResult
 
 @router.post("/reason", response_model=ReasoningResult)
-def reason_about_incident():
+def reason_about_incident(force_refresh: bool = False):
     """
     Analyzes the current active incident using the Reasoning Agent.
     """
@@ -78,6 +78,11 @@ def reason_about_incident():
     
     if not current_data:
         raise HTTPException(status_code=409, detail="No active incident to reason about")
+
+    # CACHING LOGIC: If reasoning exists, return it (unless forced)
+    if not force_refresh and current_data.get("reasoning"):
+        print(f"Returning cached reasoning for {current_data['incident_id']}")
+        return current_data["reasoning"]
         
     # Extract similar incidents from the current incident data
     # (The IncidentManager populated this on creation/update)

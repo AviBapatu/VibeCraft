@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional, List, Set, Dict, Any, Literal
 import uuid
 from enum import Enum
@@ -57,6 +57,7 @@ class Incident:
             "signals": list(self.signals),
             "severity": self.severity,
             "window_count": self.window_count,
+            "duration_seconds": (datetime.now(timezone.utc) - self.started_at).total_seconds(),
             "summary_text": self.summary_text,
             "resolution": self.resolution,
             "similar_incidents": self.similar_incidents,

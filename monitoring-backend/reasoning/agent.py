@@ -31,7 +31,7 @@ class ReasoningAgent:
         try:
             if self.api_key:
                 genai.configure(api_key=self.api_key)
-                self.model = genai.GenerativeModel("gemini-2.0-flash-001") # Using a standard performant model
+                self.model = genai.GenerativeModel("gemini-2.0-flash") # Using a standard performant model
             else:
                 self.model = None
                 print("WARNING: GEMINI_API_KEY not found. Reasoning Agent will be limited.")
@@ -206,7 +206,18 @@ class ReasoningAgent:
         for attempt in range(max_retries + 1):
             try:
                 response = self.model.generate_content(prompt)
-                return self._parse_llm_response(response.text)
+                parsed_result = self._parse_llm_response(response.text)
+                
+                # Blend confidence
+                llm_conf = parsed_result.get("llm_confidence", 0.5)
+                # Weighted blend: 50% history, 50% LLM
+                final_conf = (base_conf * 0.5) + (llm_conf * 0.5)
+                
+                 # Clamp to 0.1 minimum (unless LLM is very sure it's 0, but usually we trust history)
+                final_conf = max(0.1, final_conf)
+                
+                parsed_result["final_confidence"] = round(final_conf, 2)
+                return parsed_result
             
             except ResourceExhausted as e:
                 if attempt < max_retries:
