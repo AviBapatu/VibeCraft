@@ -7,11 +7,12 @@ import {
 } from "../api/incidentApi";
 
 import IncidentHeader from "../components/IncidentHeader";
-import Timeline from "../components/Timeline";
+import TimelineGraph from "../components/TimelineGraph";
 import SignalsServices from "../components/SignalsServices";
 import SimilarIncidents from "../components/SimilarIncidents";
 import ReasoningPanel from "../components/ReasoningPanel";
 import ApprovalPanel from "../components/ApprovalPanel";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function IncidentDetailPage() {
     const { id } = useParams();
@@ -47,7 +48,7 @@ export default function IncidentDetailPage() {
     if (loading) {
         return (
             <div className="page-container">
-                <p>Loading incident details...</p>
+                <LoadingSpinner text="Loading incident details..." />
             </div>
         );
     }
@@ -55,8 +56,11 @@ export default function IncidentDetailPage() {
     if (!incident) {
         return (
             <div className="page-container">
-                <p>No active incident found.</p>
-                <Link to="/" className="back-link">← Back to incidents</Link>
+                <div className="empty-state-card">
+                    <h2>No Active Incident</h2>
+                    <p>No active incident found for this ID.</p>
+                    <Link to="/" className="back-link">← Back to incidents</Link>
+                </div>
             </div>
         );
     }
@@ -66,7 +70,7 @@ export default function IncidentDetailPage() {
             <Link to="/" className="back-link">← Back to incidents</Link>
 
             <IncidentHeader incident={incident} />
-            <Timeline incident={incident} />
+            <TimelineGraph incident={incident} />
             <SignalsServices incident={incident} />
             <SimilarIncidents items={similar} />
             <ReasoningPanel reasoning={reasoning} />

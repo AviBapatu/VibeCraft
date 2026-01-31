@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ScenarioControls.css';
 
 const ScenarioControls = ({ isRunning, onStart, onStop, disabled }) => {
     const [duration, setDuration] = useState(0);
@@ -22,13 +23,12 @@ const ScenarioControls = ({ isRunning, onStart, onStop, disabled }) => {
     };
 
     return (
-        <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem' }}>
-            <div style={{ display: 'flex', gap: '1rem' }}>
+        <div className="scenario-controls">
+            <div className="controls-buttons">
                 <button
                     className="btn btn-primary"
                     onClick={onStart}
                     disabled={disabled || isRunning}
-                    style={{ opacity: (disabled || isRunning) ? 0.5 : 1, cursor: (disabled || isRunning) ? 'not-allowed' : 'pointer' }}
                 >
                     Start Simulation
                 </button>
@@ -36,16 +36,15 @@ const ScenarioControls = ({ isRunning, onStart, onStop, disabled }) => {
                     className="btn btn-danger"
                     onClick={onStop}
                     disabled={!isRunning}
-                    style={{ opacity: !isRunning ? 0.5 : 1, cursor: !isRunning ? 'not-allowed' : 'pointer' }}
                 >
                     Stop Simulation
                 </button>
             </div>
 
             {isRunning && (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>DURATION</span>
-                    <span style={{ fontFamily: 'monospace', fontSize: '1.2rem', color: 'var(--text-primary)' }}>
+                <div className="duration-display">
+                    <span className="duration-label">DURATION</span>
+                    <span className="duration-value">
                         {formatTime(duration)}
                     </span>
                 </div>
