@@ -6,8 +6,7 @@ export default function TimelineGraph({ incident }) {
 
     const timelineEvents = useMemo(() => {
         const events = [];
-        const now = new Date();
-        const openedAt = incident.opened_at ? new Date(incident.opened_at) : now;
+        const openedAt = incident.started_at ? new Date(incident.started_at) : new Date();
 
         // Event 1: Incident Opened
         events.push({
@@ -20,14 +19,15 @@ export default function TimelineGraph({ incident }) {
             color: "#ef4444"
         });
 
-        // Event 2: Signals Detected
+        // Event 2: Signals Detected (Escalation)
         if (incident.signals && incident.signals.length > 0) {
-            const signalsTime = new Date(openedAt.getTime() + 30000);
+            // If we don't have a specific signal timestamp, use openedAt (since they triggered it)
+            // or maybe just slightly after. But better to be accurate to openedAt.
             events.push({
                 id: 2,
                 label: "Signals Escalated",
                 description: `${incident.signals.length} signal(s) detected`,
-                timestamp: signalsTime,
+                timestamp: openedAt,
                 status: "completed",
                 icon: "📊",
                 color: "#f59e0b"
@@ -35,41 +35,60 @@ export default function TimelineGraph({ incident }) {
         }
 
         // Event 3: Similar Incidents Search
-        const searchTime = new Date(openedAt.getTime() + 60000);
-        events.push({
-            id: 3,
-            label: "Similar Incidents Search",
-            description: "Vector memory search completed",
-            timestamp: searchTime,
-            status: "completed",
-            icon: "🔍",
-            color: "#6366f1"
-        });
+        // This usually happens at creation time.
+        if (incident.similar_incidents) {
+            events.push({
+                id: 3,
+                label: "Similar Incidents Search",
+                description: "Vector memory search completed",
+                timestamp: openedAt,
+                status: "completed",
+                icon: "🔍",
+                color: "#6366f1"
+            });
+        }
 
         // Event 4: AI Reasoning Generated
-        const reasoningTime = new Date(openedAt.getTime() + 90000);
-        events.push({
-            id: 4,
-            label: "AI Reasoning Generated",
-            description: "Hypothesis and recommendations created",
-            timestamp: reasoningTime,
-            status: "completed",
-            icon: "🤖",
-            color: "#8b5cf6"
-        });
+        // Event 4: AI Reasoning Generated
+        const isReasoningWaiting = incident.reasoning?.uncertainty_notes === "WAITING_FOR_STABLE_SIGNALS";
+
+        if (incident.reasoning && incident.reasoning.created_at && !isReasoningWaiting) {
+            events.push({
+                id: 4,
+                label: "AI Reasoning Generated",
+                description: "Hypothesis and recommendations created",
+                timestamp: new Date(incident.reasoning.created_at),
+                status: "completed",
+                icon: "🤖",
+                color: "#8b5cf6"
+            });
+        } else if (incident.status !== "RESOLVED") {
+            // Show as pending/loading
+            events.push({
+                id: 4,
+                label: "AI Reasoning",
+                description: isReasoningWaiting ? "Waiting for stable signals..." : "Analyzing incident...",
+                timestamp: new Date(), // "Now"
+                status: "pending",
+                icon: "⏳",
+                color: "#8b5cf6"
+            });
+        }
 
         // Event 5: Approval Status
         if (incident.approval?.status === "PENDING") {
-            const pendingTime = new Date(openedAt.getTime() + 120000);
-            events.push({
-                id: 5,
-                label: "Awaiting Approval",
-                description: "Pending human decision",
-                timestamp: pendingTime,
-                status: "pending",
-                icon: "⏳",
-                color: "#f59e0b"
-            });
+            // Only show pending approval if reasoning is done
+            if (incident.reasoning) {
+                events.push({
+                    id: 5,
+                    label: "Awaiting Approval",
+                    description: "Pending human decision",
+                    timestamp: new Date(),
+                    status: "pending",
+                    icon: "⏳",
+                    color: "#f59e0b"
+                });
+            }
         } else if (incident.approval?.decided_at) {
             const decidedTime = new Date(incident.approval.decided_at);
             events.push({
@@ -119,9 +138,9 @@ export default function TimelineGraph({ incident }) {
                         <span className="stat-value">
                             {timelineEvents.length > 0
                                 ? getDuration(
-                                      timelineEvents[0].timestamp,
-                                      timelineEvents[timelineEvents.length - 1].timestamp
-                                  )
+                                    timelineEvents[0].timestamp,
+                                    timelineEvents[timelineEvents.length - 1].timestamp
+                                )
                                 : "—"}
                         </span>
                     </div>

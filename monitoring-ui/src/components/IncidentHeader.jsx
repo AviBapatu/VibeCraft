@@ -38,9 +38,11 @@ export default function IncidentHeader({ incident }) {
                 <span className={`badge ${getSeverityColor(incident.severity)}`}>
                     {incident.severity}
                 </span>
-                <span className={`badge ${getApprovalColor(incident.approval.status)}`}>
-                    Approval: {incident.approval.status}
-                </span>
+                {incident.approval && (
+                    <span className={`badge ${getApprovalColor(incident.approval.status)}`}>
+                        Approval: {incident.approval.status}
+                    </span>
+                )}
             </div>
         </div>
     );

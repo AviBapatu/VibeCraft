@@ -20,6 +20,19 @@ export default function IncidentDetailPage() {
     const [similar, setSimilar] = useState([]);
     const [reasoning, setReasoning] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [reasoningLoading, setReasoningLoading] = useState(false);
+
+    const fetchReasoning = async () => {
+        setReasoningLoading(true);
+        try {
+            const reasoningData = await reasonIncident();
+            setReasoning(reasoningData);
+        } catch (error) {
+            console.error("Failed to fetch reasoning:", error);
+        } finally {
+            setReasoningLoading(false);
+        }
+    };
 
     useEffect(() => {
         // Initial fetch of everything
@@ -32,13 +45,21 @@ export default function IncidentDetailPage() {
             setSimilar(similarData?.similar_incidents || []);
             setReasoning(reasoningData);
             setLoading(false);
+        }).catch((error) => {
+            console.error("Failed to fetch incident data:", error);
+            setLoading(false);
         });
 
         // Poll incident status for updates
         const interval = setInterval(() => {
             getCurrentIncident().then((data) => {
                 // Only update if we have an incident to avoid flickering if it disappears momentarily
-                if (data) setIncident(data);
+                if (data) {
+                    setIncident(data);
+                    if (data.reasoning) {
+                        setReasoning(data.reasoning);
+                    }
+                }
             });
         }, 2000);
 
@@ -73,7 +94,7 @@ export default function IncidentDetailPage() {
             <TimelineGraph incident={incident} />
             <SignalsServices incident={incident} />
             <SimilarIncidents items={similar} />
-            <ReasoningPanel reasoning={reasoning} />
+            <ReasoningPanel reasoning={reasoning} isLoading={reasoningLoading} onRetry={fetchReasoning} />
             <ApprovalPanel
                 incident={incident}
                 onDecision={setIncident}

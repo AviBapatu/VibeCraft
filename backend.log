@@ -1,0 +1,1098 @@
+nohup: ignoring input
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:   1%|          | 1/103 [00:00<00:00, 29127.11it/s, Materializing param=embeddings.LayerNorm.bias]Loading weights:   1%|          | 1/103 [00:00<00:00, 11949.58it/s, Materializing param=embeddings.LayerNorm.bias]Loading weights:   2%|▏         | 2/103 [00:00<00:00, 11634.69it/s, Materializing param=embeddings.LayerNorm.weight]Loading weights:   2%|▏         | 2/103 [00:00<00:00, 9811.24it/s, Materializing param=embeddings.LayerNorm.weight] Loading weights:   3%|▎         | 3/103 [00:00<00:00, 9619.96it/s, Materializing param=embeddings.position_embeddings.weight]Loading weights:   3%|▎         | 3/103 [00:00<00:00, 8600.76it/s, Materializing param=embeddings.position_embeddings.weight]Loading weights:   4%|▍         | 4/103 [00:00<00:00, 9851.57it/s, Materializing param=embeddings.token_type_embeddings.weight]Loading weights:   4%|▍         | 4/103 [00:00<00:00, 9233.47it/s, Materializing param=embeddings.token_type_embeddings.weight]Loading weights:   5%|▍         | 5/103 [00:00<00:00, 10325.71it/s, Materializing param=embeddings.word_embeddings.weight]     Loading weights:   5%|▍         | 5/103 [00:00<00:00, 9845.78it/s, Materializing param=embeddings.word_embeddings.weight] Loading weights:   6%|▌         | 6/103 [00:00<00:00, 10740.86it/s, Materializing param=encoder.layer.0.attention.output.LayerNorm.bias]Loading weights:   6%|▌         | 6/103 [00:00<00:00, 10225.85it/s, Materializing param=encoder.layer.0.attention.output.LayerNorm.bias]Loading weights:   7%|▋         | 7/103 [00:00<00:00, 10096.33it/s, Materializing param=encoder.layer.0.attention.output.LayerNorm.weight]Loading weights:   7%|▋         | 7/103 [00:00<00:00, 9750.96it/s, Materializing param=encoder.layer.0.attention.output.LayerNorm.weight] Loading weights:   8%|▊         | 8/103 [00:00<00:00, 10479.21it/s, Materializing param=encoder.layer.0.attention.output.dense.bias]     Loading weights:   8%|▊         | 8/103 [00:00<00:00, 10149.56it/s, Materializing param=encoder.layer.0.attention.output.dense.bias]Loading weights:   9%|▊         | 9/103 [00:00<00:00, 5838.04it/s, Materializing param=encoder.layer.0.attention.output.dense.weight]Loading weights:   9%|▊         | 9/103 [00:00<00:00, 5737.76it/s, Materializing param=encoder.layer.0.attention.output.dense.weight]Loading weights:  10%|▉         | 10/103 [00:00<00:00, 6169.91it/s, Materializing param=encoder.layer.0.attention.self.key.bias]     Loading weights:  10%|▉         | 10/103 [00:00<00:00, 6076.94it/s, Materializing param=encoder.layer.0.attention.self.key.bias]Loading weights:  11%|█         | 11/103 [00:00<00:00, 6485.43it/s, Materializing param=encoder.layer.0.attention.self.key.weight]Loading weights:  11%|█         | 11/103 [00:00<00:00, 6391.10it/s, Materializing param=encoder.layer.0.attention.self.key.weight]Loading weights:  12%|█▏        | 12/103 [00:00<00:00, 6662.03it/s, Materializing param=encoder.layer.0.attention.self.query.bias]Loading weights:  12%|█▏        | 12/103 [00:00<00:00, 6572.43it/s, Materializing param=encoder.layer.0.attention.self.query.bias]Loading weights:  13%|█▎        | 13/103 [00:00<00:00, 6948.64it/s, Materializing param=encoder.layer.0.attention.self.query.weight]Loading weights:  13%|█▎        | 13/103 [00:00<00:00, 6856.02it/s, Materializing param=encoder.layer.0.attention.self.query.weight]Loading weights:  14%|█▎        | 14/103 [00:00<00:00, 7186.42it/s, Materializing param=encoder.layer.0.attention.self.value.bias]  Loading weights:  14%|█▎        | 14/103 [00:00<00:00, 7090.11it/s, Materializing param=encoder.layer.0.attention.self.value.bias]Loading weights:  15%|█▍        | 15/103 [00:00<00:00, 7121.87it/s, Materializing param=encoder.layer.0.attention.self.value.weight]Loading weights:  15%|█▍        | 15/103 [00:00<00:00, 6973.46it/s, Materializing param=encoder.layer.0.attention.self.value.weight]Loading weights:  16%|█▌        | 16/103 [00:00<00:00, 6930.59it/s, Materializing param=encoder.layer.0.intermediate.dense.bias]    Loading weights:  16%|█▌        | 16/103 [00:00<00:00, 6846.45it/s, Materializing param=encoder.layer.0.intermediate.dense.bias]Loading weights:  17%|█▋        | 17/103 [00:00<00:00, 7128.18it/s, Materializing param=encoder.layer.0.intermediate.dense.weight]Loading weights:  17%|█▋        | 17/103 [00:00<00:00, 7047.16it/s, Materializing param=encoder.layer.0.intermediate.dense.weight]Loading weights:  17%|█▋        | 18/103 [00:00<00:00, 7309.27it/s, Materializing param=encoder.layer.0.output.LayerNorm.bias]    Loading weights:  17%|█▋        | 18/103 [00:00<00:00, 7239.19it/s, Materializing param=encoder.layer.0.output.LayerNorm.bias]Loading weights:  18%|█▊        | 19/103 [00:00<00:00, 7479.28it/s, Materializing param=encoder.layer.0.output.LayerNorm.weight]Loading weights:  18%|█▊        | 19/103 [00:00<00:00, 7408.36it/s, Materializing param=encoder.layer.0.output.LayerNorm.weight]Loading weights:  19%|█▉        | 20/103 [00:00<00:00, 7650.35it/s, Materializing param=encoder.layer.0.output.dense.bias]      Loading weights:  19%|█▉        | 20/103 [00:00<00:00, 7583.27it/s, Materializing param=encoder.layer.0.output.dense.bias]Loading weights:  20%|██        | 21/103 [00:00<00:00, 7816.86it/s, Materializing param=encoder.layer.0.output.dense.weight]Loading weights:  20%|██        | 21/103 [00:00<00:00, 7745.37it/s, Materializing param=encoder.layer.0.output.dense.weight]Loading weights:  21%|██▏       | 22/103 [00:00<00:00, 7965.01it/s, Materializing param=encoder.layer.1.attention.output.LayerNorm.bias]Loading weights:  21%|██▏       | 22/103 [00:00<00:00, 7892.12it/s, Materializing param=encoder.layer.1.attention.output.LayerNorm.bias]Loading weights:  22%|██▏       | 23/103 [00:00<00:00, 8097.79it/s, Materializing param=encoder.layer.1.attention.output.LayerNorm.weight]Loading weights:  22%|██▏       | 23/103 [00:00<00:00, 8031.05it/s, Materializing param=encoder.layer.1.attention.output.LayerNorm.weight]Loading weights:  23%|██▎       | 24/103 [00:00<00:00, 8238.26it/s, Materializing param=encoder.layer.1.attention.output.dense.bias]      Loading weights:  23%|██▎       | 24/103 [00:00<00:00, 8170.72it/s, Materializing param=encoder.layer.1.attention.output.dense.bias]Loading weights:  24%|██▍       | 25/103 [00:00<00:00, 8374.54it/s, Materializing param=encoder.layer.1.attention.output.dense.weight]Loading weights:  24%|██▍       | 25/103 [00:00<00:00, 8298.98it/s, Materializing param=encoder.layer.1.attention.output.dense.weight]Loading weights:  25%|██▌       | 26/103 [00:00<00:00, 8492.48it/s, Materializing param=encoder.layer.1.attention.self.key.bias]      Loading weights:  25%|██▌       | 26/103 [00:00<00:00, 8424.90it/s, Materializing param=encoder.layer.1.attention.self.key.bias]Loading weights:  26%|██▌       | 27/103 [00:00<00:00, 8610.57it/s, Materializing param=encoder.layer.1.attention.self.key.weight]Loading weights:  26%|██▌       | 27/103 [00:00<00:00, 8541.73it/s, Materializing param=encoder.layer.1.attention.self.key.weight]Loading weights:  27%|██▋       | 28/103 [00:00<00:00, 8718.67it/s, Materializing param=encoder.layer.1.attention.self.query.bias]Loading weights:  27%|██▋       | 28/103 [00:00<00:00, 8656.34it/s, Materializing param=encoder.layer.1.attention.self.query.bias]Loading weights:  28%|██▊       | 29/103 [00:00<00:00, 8833.96it/s, Materializing param=encoder.layer.1.attention.self.query.weight]Loading weights:  28%|██▊       | 29/103 [00:00<00:00, 8764.58it/s, Materializing param=encoder.layer.1.attention.self.query.weight]Loading weights:  29%|██▉       | 30/103 [00:00<00:00, 8934.19it/s, Materializing param=encoder.layer.1.attention.self.value.bias]  Loading weights:  29%|██▉       | 30/103 [00:00<00:00, 8873.70it/s, Materializing param=encoder.layer.1.attention.self.value.bias]Loading weights:  30%|███       | 31/103 [00:00<00:00, 8851.15it/s, Materializing param=encoder.layer.1.attention.self.value.weight]Loading weights:  30%|███       | 31/103 [00:00<00:00, 8786.55it/s, Materializing param=encoder.layer.1.attention.self.value.weight]Loading weights:  31%|███       | 32/103 [00:00<00:00, 8944.27it/s, Materializing param=encoder.layer.1.intermediate.dense.bias]    Loading weights:  31%|███       | 32/103 [00:00<00:00, 8885.65it/s, Materializing param=encoder.layer.1.intermediate.dense.bias]Loading weights:  32%|███▏      | 33/103 [00:00<00:00, 9040.04it/s, Materializing param=encoder.layer.1.intermediate.dense.weight]Loading weights:  32%|███▏      | 33/103 [00:00<00:00, 8984.88it/s, Materializing param=encoder.layer.1.intermediate.dense.weight]Loading weights:  33%|███▎      | 34/103 [00:00<00:00, 9142.60it/s, Materializing param=encoder.layer.1.output.LayerNorm.bias]    Loading weights:  33%|███▎      | 34/103 [00:00<00:00, 9084.94it/s, Materializing param=encoder.layer.1.output.LayerNorm.bias]Loading weights:  34%|███▍      | 35/103 [00:00<00:00, 9235.07it/s, Materializing param=encoder.layer.1.output.LayerNorm.weight]Loading weights:  34%|███▍      | 35/103 [00:00<00:00, 9180.20it/s, Materializing param=encoder.layer.1.output.LayerNorm.weight]Loading weights:  35%|███▍      | 36/103 [00:00<00:00, 9327.01it/s, Materializing param=encoder.layer.1.output.dense.bias]      Loading weights:  35%|███▍      | 36/103 [00:00<00:00, 9270.32it/s, Materializing param=encoder.layer.1.output.dense.bias]Loading weights:  36%|███▌      | 37/103 [00:00<00:00, 9410.54it/s, Materializing param=encoder.layer.1.output.dense.weight]Loading weights:  36%|███▌      | 37/103 [00:00<00:00, 9355.51it/s, Materializing param=encoder.layer.1.output.dense.weight]Loading weights:  37%|███▋      | 38/103 [00:00<00:00, 9153.66it/s, Materializing param=encoder.layer.2.attention.output.LayerNorm.bias]Loading weights:  37%|███▋      | 38/103 [00:00<00:00, 9094.12it/s, Materializing param=encoder.layer.2.attention.output.LayerNorm.bias]Loading weights:  38%|███▊      | 39/103 [00:00<00:00, 9219.29it/s, Materializing param=encoder.layer.2.attention.output.LayerNorm.weight]Loading weights:  38%|███▊      | 39/103 [00:00<00:00, 9164.54it/s, Materializing param=encoder.layer.2.attention.output.LayerNorm.weight]Loading weights:  39%|███▉      | 40/103 [00:00<00:00, 9291.25it/s, Materializing param=encoder.layer.2.attention.output.dense.bias]      Loading weights:  39%|███▉      | 40/103 [00:00<00:00, 9235.00it/s, Materializing param=encoder.layer.2.attention.output.dense.bias]Loading weights:  40%|███▉      | 41/103 [00:00<00:00, 9354.65it/s, Materializing param=encoder.layer.2.attention.output.dense.weight]Loading weights:  40%|███▉      | 41/103 [00:00<00:00, 9303.03it/s, Materializing param=encoder.layer.2.attention.output.dense.weight]Loading weights:  41%|████      | 42/103 [00:00<00:00, 9297.55it/s, Materializing param=encoder.layer.2.attention.self.key.bias]      Loading weights:  41%|████      | 42/103 [00:00<00:00, 9244.37it/s, Materializing param=encoder.layer.2.attention.self.key.bias]Loading weights:  42%|████▏     | 43/103 [00:00<00:00, 8956.85it/s, Materializing param=encoder.layer.2.attention.self.key.weight]Loading weights:  42%|████▏     | 43/103 [00:00<00:00, 8881.42it/s, Materializing param=encoder.layer.2.attention.self.key.weight]Loading weights:  43%|████▎     | 44/103 [00:00<00:00, 9002.41it/s, Materializing param=encoder.layer.2.attention.self.query.bias]Loading weights:  43%|████▎     | 44/103 [00:00<00:00, 8959.14it/s, Materializing param=encoder.layer.2.attention.self.query.bias]Loading weights:  44%|████▎     | 45/103 [00:00<00:00, 9078.14it/s, Materializing param=encoder.layer.2.attention.self.query.weight]Loading weights:  44%|████▎     | 45/103 [00:00<00:00, 8864.12it/s, Materializing param=encoder.layer.2.attention.self.query.weight]Loading weights:  45%|████▍     | 46/103 [00:00<00:00, 8976.36it/s, Materializing param=encoder.layer.2.attention.self.value.bias]  Loading weights:  45%|████▍     | 46/103 [00:00<00:00, 8934.38it/s, Materializing param=encoder.layer.2.attention.self.value.bias]Loading weights:  46%|████▌     | 47/103 [00:00<00:00, 9040.69it/s, Materializing param=encoder.layer.2.attention.self.value.weight]Loading weights:  46%|████▌     | 47/103 [00:00<00:00, 8998.60it/s, Materializing param=encoder.layer.2.attention.self.value.weight]Loading weights:  47%|████▋     | 48/103 [00:00<00:00, 8708.27it/s, Materializing param=encoder.layer.2.intermediate.dense.bias]    Loading weights:  47%|████▋     | 48/103 [00:00<00:00, 8670.02it/s, Materializing param=encoder.layer.2.intermediate.dense.bias]Loading weights:  48%|████▊     | 49/103 [00:00<00:00, 8289.14it/s, Materializing param=encoder.layer.2.intermediate.dense.weight]Loading weights:  48%|████▊     | 49/103 [00:00<00:00, 8254.18it/s, Materializing param=encoder.layer.2.intermediate.dense.weight]Loading weights:  49%|████▊     | 50/103 [00:00<00:00, 8352.53it/s, Materializing param=encoder.layer.2.output.LayerNorm.bias]    Loading weights:  49%|████▊     | 50/103 [00:00<00:00, 8314.77it/s, Materializing param=encoder.layer.2.output.LayerNorm.bias]Loading weights:  50%|████▉     | 51/103 [00:00<00:00, 8411.04it/s, Materializing param=encoder.layer.2.output.LayerNorm.weight]Loading weights:  50%|████▉     | 51/103 [00:00<00:00, 8378.42it/s, Materializing param=encoder.layer.2.output.LayerNorm.weight]Loading weights:  50%|█████     | 52/103 [00:00<00:00, 8474.00it/s, Materializing param=encoder.layer.2.output.dense.bias]      Loading weights:  50%|█████     | 52/103 [00:00<00:00, 8442.18it/s, Materializing param=encoder.layer.2.output.dense.bias]Loading weights:  51%|█████▏    | 53/103 [00:00<00:00, 8537.45it/s, Materializing param=encoder.layer.2.output.dense.weight]Loading weights:  51%|█████▏    | 53/103 [00:00<00:00, 8504.14it/s, Materializing param=encoder.layer.2.output.dense.weight]Loading weights:  52%|█████▏    | 54/103 [00:00<00:00, 8598.80it/s, Materializing param=encoder.layer.3.attention.output.LayerNorm.bias]Loading weights:  52%|█████▏    | 54/103 [00:00<00:00, 8565.31it/s, Materializing param=encoder.layer.3.attention.output.LayerNorm.bias]Loading weights:  53%|█████▎    | 55/103 [00:00<00:00, 8654.21it/s, Materializing param=encoder.layer.3.attention.output.LayerNorm.weight]Loading weights:  53%|█████▎    | 55/103 [00:00<00:00, 8620.90it/s, Materializing param=encoder.layer.3.attention.output.LayerNorm.weight]Loading weights:  54%|█████▍    | 56/103 [00:00<00:00, 8707.68it/s, Materializing param=encoder.layer.3.attention.output.dense.bias]      Loading weights:  54%|█████▍    | 56/103 [00:00<00:00, 8676.48it/s, Materializing param=encoder.layer.3.attention.output.dense.bias]Loading weights:  55%|█████▌    | 57/103 [00:00<00:00, 8761.83it/s, Materializing param=encoder.layer.3.attention.output.dense.weight]Loading weights:  55%|█████▌    | 57/103 [00:00<00:00, 8729.20it/s, Materializing param=encoder.layer.3.attention.output.dense.weight]Loading weights:  56%|█████▋    | 58/103 [00:00<00:00, 8815.71it/s, Materializing param=encoder.layer.3.attention.self.key.bias]      Loading weights:  56%|█████▋    | 58/103 [00:00<00:00, 8785.15it/s, Materializing param=encoder.layer.3.attention.self.key.bias]Loading weights:  57%|█████▋    | 59/103 [00:00<00:00, 8738.13it/s, Materializing param=encoder.layer.3.attention.self.key.weight]Loading weights:  57%|█████▋    | 59/103 [00:00<00:00, 8706.16it/s, Materializing param=encoder.layer.3.attention.self.key.weight]Loading weights:  58%|█████▊    | 60/103 [00:00<00:00, 8785.42it/s, Materializing param=encoder.layer.3.attention.self.query.bias]Loading weights:  58%|█████▊    | 60/103 [00:00<00:00, 8752.72it/s, Materializing param=encoder.layer.3.attention.self.query.bias]Loading weights:  59%|█████▉    | 61/103 [00:00<00:00, 8827.07it/s, Materializing param=encoder.layer.3.attention.self.query.weight]Loading weights:  59%|█████▉    | 61/103 [00:00<00:00, 8794.90it/s, Materializing param=encoder.layer.3.attention.self.query.weight]Loading weights:  60%|██████    | 62/103 [00:00<00:00, 8355.72it/s, Materializing param=encoder.layer.3.attention.self.value.bias]  Loading weights:  60%|██████    | 62/103 [00:00<00:00, 8328.43it/s, Materializing param=encoder.layer.3.attention.self.value.bias]Loading weights:  61%|██████    | 63/103 [00:00<00:00, 8414.52it/s, Materializing param=encoder.layer.3.attention.self.value.weight]Loading weights:  61%|██████    | 63/103 [00:00<00:00, 8389.67it/s, Materializing param=encoder.layer.3.attention.self.value.weight]Loading weights:  62%|██████▏   | 64/103 [00:00<00:00, 8470.67it/s, Materializing param=encoder.layer.3.intermediate.dense.bias]    Loading weights:  62%|██████▏   | 64/103 [00:00<00:00, 8445.62it/s, Materializing param=encoder.layer.3.intermediate.dense.bias]Loading weights:  63%|██████▎   | 65/103 [00:00<00:00, 8526.61it/s, Materializing param=encoder.layer.3.intermediate.dense.weight]Loading weights:  63%|██████▎   | 65/103 [00:00<00:00, 8501.61it/s, Materializing param=encoder.layer.3.intermediate.dense.weight]Loading weights:  64%|██████▍   | 66/103 [00:00<00:00, 8580.77it/s, Materializing param=encoder.layer.3.output.LayerNorm.bias]    Loading weights:  64%|██████▍   | 66/103 [00:00<00:00, 8556.36it/s, Materializing param=encoder.layer.3.output.LayerNorm.bias]Loading weights:  65%|██████▌   | 67/103 [00:00<00:00, 8633.17it/s, Materializing param=encoder.layer.3.output.LayerNorm.weight]Loading weights:  65%|██████▌   | 67/103 [00:00<00:00, 8608.31it/s, Materializing param=encoder.layer.3.output.LayerNorm.weight]Loading weights:  66%|██████▌   | 68/103 [00:00<00:00, 8517.62it/s, Materializing param=encoder.layer.3.output.dense.bias]      Loading weights:  66%|██████▌   | 68/103 [00:00<00:00, 8485.69it/s, Materializing param=encoder.layer.3.output.dense.bias]Loading weights:  67%|██████▋   | 69/103 [00:00<00:00, 8557.02it/s, Materializing param=encoder.layer.3.output.dense.weight]Loading weights:  67%|██████▋   | 69/103 [00:00<00:00, 8532.55it/s, Materializing param=encoder.layer.3.output.dense.weight]Loading weights:  68%|██████▊   | 70/103 [00:00<00:00, 8606.73it/s, Materializing param=encoder.layer.4.attention.output.LayerNorm.bias]Loading weights:  68%|██████▊   | 70/103 [00:00<00:00, 8581.82it/s, Materializing param=encoder.layer.4.attention.output.LayerNorm.bias]Loading weights:  69%|██████▉   | 71/103 [00:00<00:00, 8652.32it/s, Materializing param=encoder.layer.4.attention.output.LayerNorm.weight]Loading weights:  69%|██████▉   | 71/103 [00:00<00:00, 8629.75it/s, Materializing param=encoder.layer.4.attention.output.LayerNorm.weight]Loading weights:  70%|██████▉   | 72/103 [00:00<00:00, 8702.38it/s, Materializing param=encoder.layer.4.attention.output.dense.bias]      Loading weights:  70%|██████▉   | 72/103 [00:00<00:00, 8679.37it/s, Materializing param=encoder.layer.4.attention.output.dense.bias]Loading weights:  71%|███████   | 73/103 [00:00<00:00, 8750.87it/s, Materializing param=encoder.layer.4.attention.output.dense.weight]Loading weights:  71%|███████   | 73/103 [00:00<00:00, 8727.92it/s, Materializing param=encoder.layer.4.attention.output.dense.weight]Loading weights:  72%|███████▏  | 74/103 [00:00<00:00, 8560.04it/s, Materializing param=encoder.layer.4.attention.self.key.bias]      Loading weights:  72%|███████▏  | 74/103 [00:00<00:00, 8536.73it/s, Materializing param=encoder.layer.4.attention.self.key.bias]Loading weights:  73%|███████▎  | 75/103 [00:00<00:00, 8610.18it/s, Materializing param=encoder.layer.4.attention.self.key.weight]Loading weights:  73%|███████▎  | 75/103 [00:00<00:00, 8471.29it/s, Materializing param=encoder.layer.4.attention.self.key.weight]Loading weights:  74%|███████▍  | 76/103 [00:00<00:00, 8543.74it/s, Materializing param=encoder.layer.4.attention.self.query.bias]Loading weights:  74%|███████▍  | 76/103 [00:00<00:00, 8521.36it/s, Materializing param=encoder.layer.4.attention.self.query.bias]Loading weights:  75%|███████▍  | 77/103 [00:00<00:00, 8593.51it/s, Materializing param=encoder.layer.4.attention.self.query.weight]Loading weights:  75%|███████▍  | 77/103 [00:00<00:00, 8569.34it/s, Materializing param=encoder.layer.4.attention.self.query.weight]Loading weights:  76%|███████▌  | 78/103 [00:00<00:00, 8628.43it/s, Materializing param=encoder.layer.4.attention.self.value.bias]  Loading weights:  76%|███████▌  | 78/103 [00:00<00:00, 8605.96it/s, Materializing param=encoder.layer.4.attention.self.value.bias]Loading weights:  77%|███████▋  | 79/103 [00:00<00:00, 8666.37it/s, Materializing param=encoder.layer.4.attention.self.value.weight]Loading weights:  77%|███████▋  | 79/103 [00:00<00:00, 8644.21it/s, Materializing param=encoder.layer.4.attention.self.value.weight]Loading weights:  78%|███████▊  | 80/103 [00:00<00:00, 8313.99it/s, Materializing param=encoder.layer.4.intermediate.dense.bias]    Loading weights:  78%|███████▊  | 80/103 [00:00<00:00, 8256.30it/s, Materializing param=encoder.layer.4.intermediate.dense.bias]Loading weights:  79%|███████▊  | 81/103 [00:00<00:00, 8321.42it/s, Materializing param=encoder.layer.4.intermediate.dense.weight]Loading weights:  79%|███████▊  | 81/103 [00:00<00:00, 8303.32it/s, Materializing param=encoder.layer.4.intermediate.dense.weight]Loading weights:  80%|███████▉  | 82/103 [00:00<00:00, 8370.44it/s, Materializing param=encoder.layer.4.output.LayerNorm.bias]    Loading weights:  80%|███████▉  | 82/103 [00:00<00:00, 8351.54it/s, Materializing param=encoder.layer.4.output.LayerNorm.bias]Loading weights:  81%|████████  | 83/103 [00:00<00:00, 8413.54it/s, Materializing param=encoder.layer.4.output.LayerNorm.weight]Loading weights:  81%|████████  | 83/103 [00:00<00:00, 8394.88it/s, Materializing param=encoder.layer.4.output.LayerNorm.weight]Loading weights:  82%|████████▏ | 84/103 [00:00<00:00, 8457.48it/s, Materializing param=encoder.layer.4.output.dense.bias]      Loading weights:  82%|████████▏ | 84/103 [00:00<00:00, 8438.23it/s, Materializing param=encoder.layer.4.output.dense.bias]Loading weights:  83%|████████▎ | 85/103 [00:00<00:00, 8496.77it/s, Materializing param=encoder.layer.4.output.dense.weight]Loading weights:  83%|████████▎ | 85/103 [00:00<00:00, 8477.57it/s, Materializing param=encoder.layer.4.output.dense.weight]Loading weights:  83%|████████▎ | 86/103 [00:00<00:00, 8532.07it/s, Materializing param=encoder.layer.5.attention.output.LayerNorm.bias]Loading weights:  83%|████████▎ | 86/103 [00:00<00:00, 8510.73it/s, Materializing param=encoder.layer.5.attention.output.LayerNorm.bias]Loading weights:  84%|████████▍ | 87/103 [00:00<00:00, 8353.85it/s, Materializing param=encoder.layer.5.attention.output.LayerNorm.weight]Loading weights:  84%|████████▍ | 87/103 [00:00<00:00, 8334.77it/s, Materializing param=encoder.layer.5.attention.output.LayerNorm.weight]Loading weights:  85%|████████▌ | 88/103 [00:00<00:00, 8194.55it/s, Materializing param=encoder.layer.5.attention.output.dense.bias]      Loading weights:  85%|████████▌ | 88/103 [00:00<00:00, 8175.49it/s, Materializing param=encoder.layer.5.attention.output.dense.bias]Loading weights:  86%|████████▋ | 89/103 [00:00<00:00, 8229.38it/s, Materializing param=encoder.layer.5.attention.output.dense.weight]Loading weights:  86%|████████▋ | 89/103 [00:00<00:00, 8210.02it/s, Materializing param=encoder.layer.5.attention.output.dense.weight]Loading weights:  87%|████████▋ | 90/103 [00:00<00:00, 8263.19it/s, Materializing param=encoder.layer.5.attention.self.key.bias]      Loading weights:  87%|████████▋ | 90/103 [00:00<00:00, 8244.24it/s, Materializing param=encoder.layer.5.attention.self.key.bias]Loading weights:  88%|████████▊ | 91/103 [00:00<00:00, 8295.44it/s, Materializing param=encoder.layer.5.attention.self.key.weight]Loading weights:  88%|████████▊ | 91/103 [00:00<00:00, 8274.40it/s, Materializing param=encoder.layer.5.attention.self.key.weight]Loading weights:  89%|████████▉ | 92/103 [00:00<00:00, 8323.47it/s, Materializing param=encoder.layer.5.attention.self.query.bias]Loading weights:  89%|████████▉ | 92/103 [00:00<00:00, 8304.84it/s, Materializing param=encoder.layer.5.attention.self.query.bias]Loading weights:  90%|█████████ | 93/103 [00:00<00:00, 8096.78it/s, Materializing param=encoder.layer.5.attention.self.query.weight]Loading weights:  90%|█████████ | 93/103 [00:00<00:00, 8076.99it/s, Materializing param=encoder.layer.5.attention.self.query.weight]Loading weights:  91%|█████████▏| 94/103 [00:00<00:00, 7923.32it/s, Materializing param=encoder.layer.5.attention.self.value.bias]  Loading weights:  91%|█████████▏| 94/103 [00:00<00:00, 7906.16it/s, Materializing param=encoder.layer.5.attention.self.value.bias]Loading weights:  92%|█████████▏| 95/103 [00:00<00:00, 7956.77it/s, Materializing param=encoder.layer.5.attention.self.value.weight]Loading weights:  92%|█████████▏| 95/103 [00:00<00:00, 7939.96it/s, Materializing param=encoder.layer.5.attention.self.value.weight]Loading weights:  93%|█████████▎| 96/103 [00:00<00:00, 7986.77it/s, Materializing param=encoder.layer.5.intermediate.dense.bias]    Loading weights:  93%|█████████▎| 96/103 [00:00<00:00, 7969.39it/s, Materializing param=encoder.layer.5.intermediate.dense.bias]Loading weights:  94%|█████████▍| 97/103 [00:00<00:00, 8019.39it/s, Materializing param=encoder.layer.5.intermediate.dense.weight]Loading weights:  94%|█████████▍| 97/103 [00:00<00:00, 8003.92it/s, Materializing param=encoder.layer.5.intermediate.dense.weight]Loading weights:  95%|█████████▌| 98/103 [00:00<00:00, 8054.75it/s, Materializing param=encoder.layer.5.output.LayerNorm.bias]    Loading weights:  95%|█████████▌| 98/103 [00:00<00:00, 8039.62it/s, Materializing param=encoder.layer.5.output.LayerNorm.bias]Loading weights:  96%|█████████▌| 99/103 [00:00<00:00, 8088.12it/s, Materializing param=encoder.layer.5.output.LayerNorm.weight]Loading weights:  96%|█████████▌| 99/103 [00:00<00:00, 8072.40it/s, Materializing param=encoder.layer.5.output.LayerNorm.weight]Loading weights:  97%|█████████▋| 100/103 [00:00<00:00, 8046.63it/s, Materializing param=encoder.layer.5.output.dense.bias]     Loading weights:  97%|█████████▋| 100/103 [00:00<00:00, 8029.83it/s, Materializing param=encoder.layer.5.output.dense.bias]Loading weights:  98%|█████████▊| 101/103 [00:00<00:00, 8078.74it/s, Materializing param=encoder.layer.5.output.dense.weight]Loading weights:  98%|█████████▊| 101/103 [00:00<00:00, 8062.44it/s, Materializing param=encoder.layer.5.output.dense.weight]Loading weights:  99%|█████████▉| 102/103 [00:00<00:00, 8111.85it/s, Materializing param=pooler.dense.bias]                  Loading weights:  99%|█████████▉| 102/103 [00:00<00:00, 8095.73it/s, Materializing param=pooler.dense.bias]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8106.38it/s, Materializing param=pooler.dense.weight]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8090.29it/s, Materializing param=pooler.dense.weight]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8052.29it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+INFO:     Started server process [64144]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Starting background anomaly detection loop...
+es.
+[DETECTOR] auth_error_rate=0.58, latency=600.00, count=180, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.59, latency=600.00, count=180, errs=106, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=600.00, count=180, errs=102, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=600.00, count=177, errs=94, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=600.00, count=180, errs=95, levels={'ERROR', 'INFO'}
+INFO:     127.0.0.1:51444 - "GET /incident/current HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51456 - "POST /attack/start HTTP/1.1" 404 Not Found
+[DETECTOR] auth_error_rate=0.51, latency=600.00, count=180, errs=92, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.51, latency=600.00, count=180, errs=91, levels={'ERROR', 'INFO'}
+INFO:     127.0.0.1:42776 - "POST /incident/reason HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42788 - "POST /attack/stop HTTP/1.1" 404 Not Found
+[DETECTOR] auth_error_rate=0.54, latency=600.00, count=180, errs=97, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=600.00, count=180, errs=100, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=600.00, count=180, errs=101, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=600.00, count=180, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.59, latency=600.00, count=180, errs=107, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=600.00, count=180, errs=105, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=600.00, count=177, errs=99, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=600.00, count=180, errs=105, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=600.00, count=180, errs=112, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=600.00, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=600.00, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=586.60, count=169, errs=106, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=585.29, count=154, errs=94, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=583.71, count=139, errs=85, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.28, count=121, errs=75, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=578.63, count=106, errs=66, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=575.11, count=91, errs=53, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=570.20, count=76, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=562.87, count=61, errs=34, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=550.76, count=46, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=526.94, count=31, errs=18, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=458.44, count=16, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.33, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=22.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.33, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.42, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.82, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.18, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.37, count=27, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.91, count=32, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.05, count=37, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.31, count=42, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.62, count=47, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.77, count=52, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.21, count=57, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.45, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=48.92, count=62, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=108.74, count=72, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=162.74, count=81, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=211.20, count=91, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=255.42, count=101, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.04, latency=302.83, count=114, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=342.32, count=124, errs=8, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=380.38, count=134, errs=9, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.08, latency=415.32, count=144, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.10, latency=445.69, count=154, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.13, latency=472.40, count=164, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.14, latency=495.86, count=174, errs=25, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=518.33, count=180, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=540.00, count=180, errs=29, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=558.33, count=180, errs=35, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=573.33, count=180, errs=40, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=576.36, count=171, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=565.95, count=161, errs=39, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.25, latency=549.95, count=151, errs=37, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=527.72, count=141, errs=36, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=500.82, count=131, errs=34, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=469.42, count=121, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.20, latency=432.05, count=111, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=383.65, count=102, errs=19, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=329.58, count=92, errs=16, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=262.20, count=82, errs=13, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=175.51, count=72, errs=8, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=61.08, count=62, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=59.79, count=63, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.01, latency=119.15, count=73, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=171.58, count=83, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=219.08, count=93, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.04, latency=263.01, count=103, errs=4, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.04, latency=304.35, count=113, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=344.18, count=123, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=390.04, count=135, errs=9, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.08, latency=423.90, count=145, errs=12, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.10, latency=453.50, count=155, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.09, latency=479.65, count=165, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.13, latency=502.81, count=175, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.14, latency=522.93, count=180, errs=25, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=543.93, count=180, errs=29, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=561.60, count=180, errs=31, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=578.40, count=180, errs=38, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=588.73, count=180, errs=44, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=595.73, count=180, errs=49, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=599.40, count=180, errs=56, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.33, latency=600.00, count=180, errs=60, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.36, latency=600.00, count=180, errs=64, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.39, latency=600.00, count=180, errs=71, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.45, latency=600.00, count=180, errs=81, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.46, latency=600.00, count=180, errs=82, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.51, latency=600.00, count=180, errs=91, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=600.00, count=180, errs=97, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=600.00, count=177, errs=101, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=600.00, count=180, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=600.00, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=600.00, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=600.00, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=600.00, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=600.00, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=600.00, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=587.10, count=172, errs=107, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=572.04, count=161, errs=99, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=569.16, count=146, errs=89, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.59, latency=565.63, count=131, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=561.19, count=116, errs=66, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=555.43, count=101, errs=55, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=547.65, count=86, errs=46, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.55, latency=536.59, count=71, errs=39, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=516.63, count=54, errs=30, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=481.53, count=38, errs=20, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.48, latency=404.26, count=23, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.25, count=8, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=22.67, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.25, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.56, count=9, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.57, count=14, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.47, count=19, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.96, count=24, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.57, count=30, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.91, count=35, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.77, count=40, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.29, count=45, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.50, count=50, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.58, count=55, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.55, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.52, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.03, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.42, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.77, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.80, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.15, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.53, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.77, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.72, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.70, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.12, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.37, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.42, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.38, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.65, count=60, errs=0, levels={'INFO'}
+Persisted VectorStore to memory/storage/index.faiss
+Stored incident INC-6C1510BD in vector memory.
+[DETECTOR] auth_error_rate=0.00, latency=36.68, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.20, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.12, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.65, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.50, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.55, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.77, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.70, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.90, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.27, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.83, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.10, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.95, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.93, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.33, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.92, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.37, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.33, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.75, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.61, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.32, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.92, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.74, count=58, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.34, count=53, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.85, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.20, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.30, count=57, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.05, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.18, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.55, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.11, count=55, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.45, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.90, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.41, count=56, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.16, count=56, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.13, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.60, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.50, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.30, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.18, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.42, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.51, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.01, latency=108.28, count=72, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.01, latency=160.82, count=82, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=208.40, count=92, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=252.80, count=102, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.04, latency=294.74, count=112, errs=4, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=334.47, count=122, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.08, latency=372.86, count=132, errs=10, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=411.31, count=141, errs=16, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=442.41, count=151, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=472.26, count=164, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=495.83, count=174, errs=36, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=518.33, count=180, errs=43, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=540.00, count=180, errs=51, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.30, latency=539.49, count=170, errs=51, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.32, latency=544.57, count=157, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.35, latency=553.50, count=142, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.39, latency=560.69, count=124, errs=48, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=562.43, count=109, errs=44, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=558.48, count=94, errs=38, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.42, latency=550.59, count=79, errs=33, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=539.02, count=64, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.45, latency=520.35, count=49, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.35, latency=474.10, count=31, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=356.06, count=16, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=41.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.56, count=9, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=30.36, count=14, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.16, count=19, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.92, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.83, count=30, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.17, count=35, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.20, count=40, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.67, count=45, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.04, count=51, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.27, count=56, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.45, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.35, count=57, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.24, count=54, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.40, count=48, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.56, count=43, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=38, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.30, count=33, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=28, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.95, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.29, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.58, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.43, count=7, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.75, count=4, errs=0, levels={'INFO'}
+Persisted VectorStore to memory/storage/index.faiss
+Stored incident INC-B5F5E2D8 in vector memory.
+[DETECTOR] auth_error_rate=0.00, latency=30.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.00, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.27, count=11, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.75, count=16, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.48, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.84, count=19, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.36, count=14, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.10, count=10, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=101.08, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=254.42, count=24, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=299.64, count=39, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.02, latency=330.85, count=54, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=357.19, count=69, errs=4, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.08, latency=381.26, count=84, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.10, latency=408.57, count=102, errs=10, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=430.55, count=117, errs=13, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.12, latency=449.80, count=132, errs=16, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.14, latency=465.13, count=147, errs=20, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=477.62, count=162, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=472.26, count=164, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=486.94, count=155, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=505.72, count=137, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=520.20, count=122, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=533.12, count=107, errs=24, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=543.74, count=92, errs=21, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=550.70, count=77, errs=18, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=551.35, count=62, errs=14, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=539.91, count=47, errs=13, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=511.75, count=32, errs=9, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.36, latency=398.29, count=14, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.33, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=40.50, count=2, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.71, count=7, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=39.08, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=40.24, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.77, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.93, count=27, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.59, count=32, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.22, count=37, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.48, count=42, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.38, count=48, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.00, count=51, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.00, count=51, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.28, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.10, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.15, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.30, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.39, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.15, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.02, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.48, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.50, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.70, count=60, errs=0, levels={'INFO'}
+Persisted VectorStore to memory/storage/index.faiss
+Stored incident INC-4DA51DA8 in vector memory.
+[DETECTOR] auth_error_rate=0.00, latency=34.18, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.47, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.57, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.81, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.02, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.70, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.02, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.17, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.32, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.63, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.43, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.30, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.20, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.26, count=53, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.38, count=48, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.28, count=43, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.00, count=38, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.48, count=33, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.86, count=28, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.35, count=23, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.06, count=18, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.92, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.29, count=7, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=29.00, count=2, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.33, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.00, count=8, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.00, count=13, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.72, count=18, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.38, count=16, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.82, count=11, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.50, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.60, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=231.35, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=279.94, count=32, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=308.68, count=47, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=327.95, count=62, errs=4, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=347.60, count=80, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.09, latency=364.29, count=95, errs=9, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=381.21, count=110, errs=16, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=395.46, count=125, errs=19, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=410.06, count=140, errs=24, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=413.60, count=151, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=406.46, count=154, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=416.28, count=150, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.20, latency=429.75, count=132, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=440.62, count=117, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=445.51, count=103, errs=24, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.25, latency=431.11, count=93, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=408.71, count=83, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=372.10, count=73, errs=17, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=329.38, count=66, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.12, latency=261.48, count=58, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.05, latency=206.31, count=58, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=213.17, count=64, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=254.13, count=76, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=277.90, count=91, errs=6, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.09, latency=303.61, count=109, errs=10, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.10, latency=322.53, count=124, errs=13, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.10, latency=343.73, count=137, errs=14, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.12, latency=371.63, count=147, errs=18, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=400.94, count=156, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=425.95, count=166, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=446.42, count=173, errs=30, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=465.72, count=180, errs=35, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=486.14, count=180, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.25, latency=503.92, count=180, errs=45, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=522.56, count=180, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=536.03, count=180, errs=55, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.36, latency=548.81, count=180, errs=65, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=558.67, count=180, errs=72, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.45, latency=567.00, count=180, errs=81, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.46, latency=571.03, count=180, errs=82, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.48, latency=573.81, count=180, errs=86, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.52, latency=576.11, count=180, errs=94, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=577.78, count=180, errs=100, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=578.33, count=180, errs=102, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=180, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.49, count=177, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.78, count=180, errs=136, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.78, count=180, errs=136, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.78, count=180, errs=136, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+INFO:     127.0.0.1:54166 - "GET /incident/current HTTP/1.1" 200 OK
+[DETECTOR] auth_error_rate=0.78, latency=588.89, count=180, errs=140, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.77, latency=588.61, count=180, errs=139, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.78, count=180, errs=136, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.44, count=177, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=579.36, count=176, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=557.55, count=171, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=536.06, count=171, errs=105, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=517.64, count=171, errs=99, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=501.12, count=171, errs=92, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.50, latency=487.08, count=171, errs=86, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.45, latency=474.36, count=171, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=462.81, count=171, errs=69, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.35, latency=454.92, count=171, errs=60, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.29, latency=448.92, count=171, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=446.58, count=171, errs=45, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=444.83, count=171, errs=39, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=459.31, count=180, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=480.56, count=180, errs=47, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=503.53, count=180, errs=55, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.33, latency=519.92, count=180, errs=60, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.37, latency=534.78, count=180, errs=67, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=547.00, count=180, errs=72, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=555.75, count=180, errs=72, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=564.36, count=180, errs=79, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.49, latency=571.44, count=180, errs=88, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=576.72, count=180, errs=98, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=578.89, count=180, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.36, count=177, errs=111, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.03, count=177, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.01, count=177, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.16, count=177, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=575.93, count=171, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=571.17, count=157, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=569.88, count=142, errs=98, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=568.29, count=127, errs=88, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=566.72, count=112, errs=79, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=563.64, count=97, errs=68, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=559.43, count=82, errs=57, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=554.27, count=64, errs=47, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=542.31, count=49, errs=34, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=524.21, count=34, errs=24, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=472.26, count=19, errs=12, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=30.75, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.25, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.17, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=39.00, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=38.71, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.45, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.68, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.43, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=16, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.30, count=10, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.00, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.80, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=39.36, count=11, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=39.31, count=16, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.29, count=21, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=133.20, count=35, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.04, latency=194.74, count=50, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.06, latency=240.62, count=68, errs=4, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=268.82, count=83, errs=6, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=297.79, count=101, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=320.28, count=116, errs=19, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=338.56, count=131, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=372.00, count=144, errs=31, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=399.67, count=154, errs=37, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=426.79, count=164, errs=46, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.32, latency=453.78, count=173, errs=55, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.33, latency=458.36, count=169, errs=55, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.33, latency=459.11, count=166, errs=54, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.32, latency=456.64, count=166, errs=53, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.32, latency=454.83, count=166, errs=53, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.30, latency=451.58, count=169, errs=51, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=448.14, count=166, errs=44, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=446.04, count=166, errs=43, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.25, latency=444.66, count=169, errs=42, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=439.95, count=166, errs=36, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=436.73, count=166, errs=31, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=437.88, count=169, errs=29, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=451.85, count=175, errs=34, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=471.31, count=180, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.28, latency=495.56, count=180, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.30, latency=512.50, count=180, errs=54, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.38, latency=532.64, count=180, errs=68, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.43, latency=546.39, count=180, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.43, latency=539.69, count=170, errs=73, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=533.63, count=156, errs=69, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.48, latency=537.38, count=141, errs=68, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.51, latency=537.87, count=126, errs=64, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=533.44, count=108, errs=57, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=527.00, count=93, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.55, latency=515.48, count=75, errs=41, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.55, latency=500.18, count=60, errs=33, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=476.91, count=45, errs=27, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.50, latency=420.37, count=30, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=171.75, count=12, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=28.80, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=27.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.67, count=6, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.00, count=2, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=40.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.29, count=7, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.50, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.24, count=17, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.42, count=19, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.86, count=22, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.11, count=18, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=30.67, count=12, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=32.00, count=7, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=31.60, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=44.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=42.25, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=262.05, count=19, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.08, latency=302.54, count=37, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.13, latency=325.85, count=52, errs=7, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=344.31, count=67, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=360.60, count=82, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=379.74, count=100, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.19, latency=392.17, count=115, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=405.38, count=130, errs=24, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=420.51, count=145, errs=32, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.25, latency=436.99, count=163, errs=40, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.29, latency=456.24, count=175, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=475.47, count=180, errs=56, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.33, latency=494.92, count=180, errs=60, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.37, latency=516.11, count=180, errs=67, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.40, latency=531.25, count=180, errs=72, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.43, latency=544.31, count=180, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.46, latency=555.56, count=180, errs=83, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.49, latency=564.72, count=180, errs=89, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.55, latency=573.87, count=177, errs=98, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=578.06, count=180, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=180, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=580.83, count=180, errs=111, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.62, count=177, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.75, count=179, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=584.92, count=179, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=584.82, count=168, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.29, count=153, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.92, count=177, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.50, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.18, count=177, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=571.49, count=166, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=543.69, count=169, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=522.04, count=166, errs=94, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.52, latency=503.36, count=166, errs=86, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.48, latency=487.25, count=166, errs=79, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.45, latency=474.30, count=166, errs=75, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.39, latency=461.49, count=166, errs=64, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.35, latency=452.46, count=166, errs=58, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.30, latency=445.08, count=166, errs=50, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=442.53, count=169, errs=45, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=440.20, count=169, errs=38, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=448.40, count=173, errs=37, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=468.22, count=180, errs=44, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=488.08, count=180, errs=48, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.29, latency=506.14, count=180, errs=53, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.32, latency=521.83, count=180, errs=57, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.36, latency=536.28, count=180, errs=64, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.37, latency=547.53, count=180, errs=67, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.39, latency=557.88, count=179, errs=69, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.42, latency=565.33, count=180, errs=75, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=570.19, count=180, errs=79, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.48, latency=574.08, count=180, errs=87, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.49, latency=574.72, count=180, errs=89, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.53, latency=576.39, count=180, errs=95, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.52, latency=576.11, count=180, errs=94, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.57, latency=578.33, count=180, errs=102, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.28, count=180, errs=109, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=580.83, count=180, errs=111, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=177, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=171, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.01, count=156, errs=103, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=580.00, count=178, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=563.75, count=168, errs=107, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=546.90, count=159, errs=97, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.55, latency=519.21, count=162, errs=89, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.49, latency=497.91, count=162, errs=80, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.44, latency=478.93, count=162, errs=71, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.38, latency=459.98, count=159, errs=60, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.35, latency=446.93, count=159, errs=56, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.31, latency=435.30, count=159, errs=49, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.27, latency=426.33, count=159, errs=43, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=418.47, count=159, errs=33, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=414.54, count=159, errs=28, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=407.52, count=157, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=417.04, count=153, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.16, latency=429.36, count=142, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.18, latency=441.09, count=127, errs=23, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.20, latency=452.18, count=112, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=463.34, count=97, errs=22, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.24, latency=472.79, count=82, errs=20, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=478.64, count=67, errs=15, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=481.62, count=52, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.22, latency=478.22, count=37, errs=8, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=442.58, count=19, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.50, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.33, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.20, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=40.00, count=1, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=30.50, count=4, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.40, count=10, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.80, count=15, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.15, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.12, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.00, count=30, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.31, count=35, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.30, count=40, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.29, count=45, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.16, count=50, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.21, count=56, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.47, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.35, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.77, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.78, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.65, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.72, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.13, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.92, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.75, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.60, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.10, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.22, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.28, count=60, errs=0, levels={'INFO'}
+Persisted VectorStore to memory/storage/index.faiss
+Stored incident INC-A8CDACCD in vector memory.
+[DETECTOR] auth_error_rate=0.00, latency=34.22, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.53, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.97, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.19, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.67, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.88, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.20, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.40, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.85, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.92, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.83, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.35, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.00, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.35, count=55, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.02, count=50, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.36, count=45, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.08, count=40, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.23, count=35, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.23, count=30, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.48, count=25, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.80, count=20, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.53, count=15, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.30, count=10, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.40, count=5, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.00, count=3, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.00, count=8, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.62, count=13, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.17, count=18, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.96, count=23, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.83, count=29, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.85, count=34, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.38, count=39, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=33.66, count=44, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.67, count=49, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.11, count=54, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.47, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.33, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.88, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.25, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=34.55, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.17, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.83, count=59, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.23, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=37.00, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.32, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.97, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=35.95, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.00, latency=36.77, count=60, errs=0, levels={'INFO'}
+[DETECTOR] auth_error_rate=0.01, latency=86.24, count=68, errs=1, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=137.94, count=78, errs=2, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.03, latency=182.10, count=88, errs=3, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.05, latency=221.62, count=98, errs=5, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.07, latency=259.79, count=107, errs=8, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.09, latency=292.87, count=117, errs=11, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.11, latency=323.81, count=127, errs=14, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.15, latency=357.64, count=140, errs=21, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.17, latency=385.82, count=150, errs=26, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.21, latency=413.35, count=160, errs=33, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.23, latency=438.32, count=170, errs=39, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.26, latency=460.69, count=180, errs=46, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.29, latency=482.22, count=180, errs=53, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.36, latency=502.78, count=180, errs=64, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.38, latency=519.58, count=180, errs=69, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.43, latency=535.14, count=180, errs=77, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.46, latency=548.06, count=180, errs=83, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.49, latency=560.08, count=177, errs=87, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.54, latency=569.36, count=180, errs=97, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.56, latency=574.78, count=180, errs=100, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.58, latency=578.39, count=180, errs=104, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.60, latency=580.00, count=180, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.11, count=180, errs=112, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.50, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.50, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.90, count=177, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.83, count=180, errs=129, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=582.78, count=180, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=177, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=580.83, count=180, errs=111, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.59, latency=579.72, count=180, errs=107, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.28, count=180, errs=109, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.11, count=180, errs=112, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=582.22, count=180, errs=116, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.07, count=177, errs=110, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.11, count=180, errs=112, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=581.11, count=180, errs=112, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.67, count=180, errs=114, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.62, latency=580.83, count=180, errs=111, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.28, count=180, errs=109, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.28, count=180, errs=109, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.61, latency=580.51, count=177, errs=108, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.63, latency=581.39, count=180, errs=113, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.50, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.75, count=177, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.77, latency=588.33, count=180, errs=138, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.78, latency=588.89, count=180, errs=140, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.77, latency=588.61, count=180, errs=139, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=588.06, count=180, errs=137, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.03, count=177, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.65, latency=582.50, count=180, errs=117, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=585.96, count=178, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.67, count=180, errs=132, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=588.06, count=180, errs=137, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.79, latency=589.44, count=180, errs=142, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.78, latency=589.17, count=180, errs=141, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=588.06, count=180, errs=137, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.78, count=180, errs=136, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=587.22, count=180, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.76, latency=587.85, count=177, errs=134, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.75, latency=587.50, count=180, errs=135, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.74, latency=586.94, count=180, errs=133, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=177, errs=118, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.03, count=177, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.72, count=180, errs=125, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.64, latency=581.94, count=180, errs=115, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.66, latency=583.06, count=180, errs=119, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.56, count=180, errs=128, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.20, count=179, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.73, latency=586.39, count=180, errs=131, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.72, latency=586.11, count=180, errs=130, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.71, latency=585.28, count=180, errs=127, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.70, latency=585.00, count=180, errs=126, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.44, count=180, errs=124, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.69, latency=584.36, count=179, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.33, count=180, errs=120, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.67, latency=583.61, count=180, errs=121, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=584.17, count=180, errs=123, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}
+[DETECTOR] auth_error_rate=0.68, latency=583.89, count=180, errs=122, levels={'ERROR', 'INFO'}

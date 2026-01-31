@@ -13,11 +13,6 @@ class ApprovalRequest(BaseModel):
     actor: str
     comment: Optional[str] = None
 
-class ApprovalResponse(BaseModel):
-    incident_id: str
-    approval_status: str
-    approved_at: Optional[str] = None
-
 @router.get("/current")
 def get_current_incident():
     """
@@ -39,11 +34,12 @@ def get_similar_incidents():
     
     return {"similar_incidents": current.get("similar_incidents", [])}
 
-@router.post("/approve", response_model=ApprovalResponse)
+@router.post("/approve")
 def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
     """
     Approves or Rejects an incident's recommended action.
     Requires reasoning to be present and confidence threshold met.
+    Returns the FULL incident object with updated approval state.
     """
     manager = IncidentManager.get_instance()
     
@@ -53,11 +49,8 @@ def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
         else:
             result = manager.reject_incident(request.incident_id, request.actor, request.comment)
             
-        return {
-            "incident_id": request.incident_id,
-            "approval_status": result["approval"]["status"],
-            "approved_at": result["approval"].get("decided_at")
-        }
+        # Return the FULL incident object (contract requirement)
+        return result
     except ApprovalLockError as e:
         raise HTTPException(status_code=409, detail=str(e))
     except ValueError as e:
@@ -66,7 +59,7 @@ def approve_incident_endpoint(request: ApprovalRequest = Body(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-from reasoning.agent import ReasoningAgent, IncidentReasoningRequest, ReasoningResult
+from reasoning.agent import OfflineReasoningAgent as ReasoningAgent, IncidentReasoningRequest, ReasoningResult
 
 @router.post("/reason", response_model=ReasoningResult)
 def reason_about_incident(force_refresh: bool = False):

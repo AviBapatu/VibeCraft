@@ -27,5 +27,79 @@
     "severity": "LOW",
     "resolution": "Traffic subsided automatically",
     "resolved_at": "2026-01-31T18:43:30.736707+00:00"
+  },
+  {
+    "incident_id": "INC-6C1510BD",
+    "summary_text": "HIGH severity incident involving frontend, database, payment, auth. Signals observed: traffic_volume_spike, error_rate_spike, latency_degradation. Duration: 1221.944998s. Resolved after traffic normalized.",
+    "signals": [
+      "traffic_volume_spike",
+      "error_rate_spike",
+      "latency_degradation"
+    ],
+    "services": [
+      "frontend",
+      "database",
+      "payment",
+      "auth"
+    ],
+    "severity": "HIGH",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T19:57:07.550229+00:00"
+  },
+  {
+    "incident_id": "INC-B5F5E2D8",
+    "summary_text": "HIGH severity incident involving frontend, database, payment, auth, service-b, service-a, service-c. Signals observed: traffic_volume_spike, error_rate_spike, latency_degradation. Duration: 697.638882s. Resolved after traffic normalized.",
+    "signals": [
+      "traffic_volume_spike",
+      "error_rate_spike",
+      "latency_degradation"
+    ],
+    "services": [
+      "frontend",
+      "database",
+      "payment",
+      "auth",
+      "service-b",
+      "service-a",
+      "service-c"
+    ],
+    "severity": "HIGH",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T20:15:02.714104+00:00"
+  },
+  {
+    "incident_id": "INC-4DA51DA8",
+    "summary_text": "MEDIUM severity incident involving auth, service-b, service-a. Signals observed: error_rate_spike. Duration: 87.298875s. Resolved after traffic normalized.",
+    "signals": [
+      "error_rate_spike"
+    ],
+    "services": [
+      "auth",
+      "service-b",
+      "service-a"
+    ],
+    "severity": "MEDIUM",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T20:24:16.116394+00:00"
+  },
+  {
+    "incident_id": "INC-A8CDACCD",
+    "summary_text": "HIGH severity incident involving frontend, database, auth, payment, service-b, service-a. Signals observed: traffic_volume_spike, error_rate_spike, latency_degradation. Duration: 3789.796034s. Resolved after traffic normalized.",
+    "signals": [
+      "traffic_volume_spike",
+      "error_rate_spike",
+      "latency_degradation"
+    ],
+    "services": [
+      "frontend",
+      "database",
+      "auth",
+      "payment",
+      "service-b",
+      "service-a"
+    ],
+    "severity": "HIGH",
+    "resolution": "Traffic subsided automatically",
+    "resolved_at": "2026-01-31T21:35:21.135635+00:00"
   }
 ]

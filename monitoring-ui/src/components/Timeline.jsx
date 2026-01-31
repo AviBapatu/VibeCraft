@@ -4,30 +4,40 @@ export default function Timeline({ incident }) {
     // Build timeline events from incident data
     const events = [];
 
-    if (incident.opened_at) {
+    if (incident.started_at) {
         events.push({
             label: "Incident OPENED",
-            timestamp: new Date(incident.opened_at).toLocaleTimeString()
+            timestamp: new Date(incident.started_at).toLocaleTimeString()
         });
     }
 
     if (incident.signals && incident.signals.length > 0) {
         events.push({
             label: "Signals escalated",
-            timestamp: new Date(incident.opened_at).toLocaleTimeString()
+            timestamp: new Date(incident.started_at).toLocaleTimeString()
         });
     }
 
-    // Check if similar incidents were found
-    events.push({
-        label: "Similar incident search completed",
-        timestamp: new Date().toLocaleTimeString()
-    });
+    // Check if similar incidents were found (Usually happens at creation, use started_at)
+    if (incident.similar_incidents) {
+        events.push({
+            label: "Similar incident search completed",
+            timestamp: new Date(incident.started_at).toLocaleTimeString()
+        });
+    }
 
-    events.push({
-        label: "AI reasoning generated",
-        timestamp: new Date().toLocaleTimeString()
-    });
+    if (incident.reasoning && incident.reasoning.created_at) {
+        events.push({
+            label: "AI reasoning generated",
+            timestamp: new Date(incident.reasoning.created_at).toLocaleTimeString()
+        });
+    } else if (incident.status !== "RESOLVED") {
+        // Optional: Show loading state if active but no reasoning yet
+        // events.push({
+        //    label: "Generating AI reasoning...",
+        //    timestamp: "..."
+        // });
+    }
 
     if (incident.approval.status === "PENDING") {
         events.push({

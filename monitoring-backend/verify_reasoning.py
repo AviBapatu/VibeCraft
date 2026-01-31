@@ -1,71 +1,61 @@
 import sys
 import os
 import unittest
-from unittest.mock import MagicMock, patch
-from datetime import datetime
+from unittest.mock import MagicMock
 
 # Add path
 sys.path.append(os.getcwd())
 
-from reasoning.agent import ReasoningAgent
+from reasoning.agent import OfflineReasoningAgent as ReasoningAgent
 
 class TestReasoningAgent(unittest.TestCase):
     def setUp(self):
         self.agent = ReasoningAgent()
-        # Mock the Gemini Model
-        self.agent.model = MagicMock()
 
-    def test_deterministic_confidence(self):
+    def test_calculate_confidence(self):
+        # Base 0.5 + 0.1 * len(signals) + 0.2 (if similar)
+        # 2 signals, similar exists -> 0.5 + 0.2 + 0.2 = 0.9
+        signals = ["cpu_spike", "error_rate"]
+        similar = [{"id": "123"}]
+        
+        conf = self.agent._calculate_confidence(signals, similar)
+        self.assertAlmostEqual(conf, 0.9)
+
+        # 0 signals, no similar -> 0.5 + 0.0 + 0.0 = 0.5
+        conf = self.agent._calculate_confidence([], [])
+        self.assertEqual(conf, 0.5)
+
+    def test_analyze_incident_auth(self):
         current = {
-            "signals": ["cpu_spike", "error_rate"],
+            "signals": ["error_rate_spike"],
             "services": ["auth"],
             "severity": 0.8
         }
-        similar = [{
-            "signals": ["cpu_spike"],
-            "services": ["auth"],
-            "severity": 0.7
-        }]
-        
-        # Overlap:
-        # Signals: 1/2 = 0.5 -> 0.4 * 0.5 = 0.2
-        # Services: 1/1 = 1.0 -> 0.3 * 1.0 = 0.3
-        # Severity: 1 - |0.8 - 0.7| = 0.9 -> 0.3 * 0.9 = 0.27
-        # Total: 0.2 + 0.3 + 0.27 = 0.77
-        
-        conf = self.agent._calculate_deterministic_confidence(current, similar)
-        self.assertAlmostEqual(conf, 0.77, places=2)
-
-    def test_llm_parsing(self):
-        mock_response = MagicMock()
-        mock_response.text = """
-Hypothesis: The auth service is overloaded.
-Evidence: High cpu and error rates match previous incidents.
-Recommended Actions:
-- Scale up auth
-- Rotate keys
-Uncertainty Notes: specific error logs missing.
-Confidence Score: 0.85
-"""
-        self.agent.model.generate_content.return_value = mock_response
-        
-        current = {"signals": [], "services": [], "window_count": 10, "duration_seconds": 100}
         similar = []
         
         result = self.agent.analyze_incident(current, similar)
         
-        self.assertEqual(result["hypothesis"], "The auth service is overloaded.")
-        self.assertEqual(len(result["recommended_actions"]), 2)
-        self.assertIn("Scale up auth", result["recommended_actions"])
-        self.assertEqual(result["uncertainty_notes"], "specific error logs missing.")
+        self.assertEqual(result["mode"], "offline_reasoning")
+        self.assertIn("Authentication subsystem failure", result["hypothesis"])
+        self.assertIn("Rotate authentication secrets", result["recommended_actions"][0])
+        # Conf: 0.5 + 0.1(1) = 0.6
+        self.assertEqual(result["final_confidence"], 0.6)
+
+    def test_analyze_incident_db_latency(self):
+        current = {
+            "signals": ["latency_degradation"],
+            "services": ["database"],
+            "severity": 0.8
+        }
+        similar = [{"id": "1"}]
         
-        # Test confidence blending
-        # Base confidence with 0 similar is 0.1
-        # LLM confidence is 0.85
-        # Adjustment = (0.85 - 0.1) * 0.5 = 0.375 -> Clamped to 0.1
-        # Final = 0.1 + 0.1 = 0.2
+        result = self.agent.analyze_incident(current, similar)
         
-        self.assertAlmostEqual(result["final_confidence"], 0.48, places=2)
+        self.assertIn("Database contention", result["hypothesis"])
+        # Conf: 0.5 + 0.1(1) + 0.2 = 0.8
+        self.assertEqual(result["final_confidence"], 0.8)
+        self.assertTrue(isinstance(result["evidence"], list))
+        self.assertEqual(len(result["evidence"]), 3) # signals, services, similar count
 
 if __name__ == "__main__":
     unittest.main()

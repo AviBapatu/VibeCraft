@@ -21,7 +21,7 @@ class ApprovalLockError(Exception):
     pass
 
 class Incident:
-    def __init__(self, services: Set[str], signals: Set[str], started_at: datetime, similar_incidents: List[Dict] = None):
+    def __init__(self, services: Set[str], signals: Set[str], started_at: datetime, similar_incidents: List[Dict] = None, metrics: Dict = None):
         self.incident_id = f"INC-{uuid.uuid4().hex[:8].upper()}"
         self.status = "OPEN"
         self.started_at = started_at
@@ -37,13 +37,24 @@ class Incident:
         self.resolved_at: Optional[datetime] = None
         self.similar_incidents = similar_incidents if similar_incidents else []
         
+        # Metrics for reasoning
+        self.metrics = metrics if metrics else {}
+        
         # Reasoning & Approval
         self.reasoning: Optional[Dict] = None
+        self.confidence: float = 0.0
         self.approval = {
             "status": ApprovalStatus.PENDING.value,
             "actor": None,
             "comment": None,
             "decided_at": None
+        }
+        
+        # Remediation (simulated)
+        self.remediation = {
+            "status": "PENDING",
+            "execution_mode": None,
+            "executed_at": None
         }
 
     def to_dict(self):
@@ -61,8 +72,11 @@ class Incident:
             "summary_text": self.summary_text,
             "resolution": self.resolution,
             "similar_incidents": self.similar_incidents,
+            "metrics": self.metrics,
             "reasoning": self.reasoning,
-            "approval": self.approval
+            "confidence": self.confidence,
+            "approval": self.approval,
+            "remediation": self.remediation
         }
 
 class IncidentManager:
@@ -101,7 +115,12 @@ class IncidentManager:
     def update_reasoning(self, incident_id: str, reasoning: Dict):
         """Attaches reasoning to the active incident."""
         if self.active_incident and self.active_incident.incident_id == incident_id:
+            # Add timestamp to reasoning
+            if "created_at" not in reasoning:
+                reasoning["created_at"] = datetime.utcnow().isoformat()
+            
             self.active_incident.reasoning = reasoning
+            self.active_incident.confidence = reasoning.get("confidence", 0.0)
             # If we wanted to auto-reject low confidence, we could do it here
             # But per rules, we just store it.
 
@@ -119,12 +138,13 @@ class IncidentManager:
             raise ValueError("Cannot approve incident without reasoning")
             
         # Check Confidence Threshold
-        # Using final_confidence as requested
-        confidence = self.active_incident.reasoning.get("final_confidence", 0)
+        # Using confidence from incident
+        confidence = self.active_incident.confidence
         
         if confidence < 0.6:
              raise ValueError(f"Confidence score {confidence} is below threshold 0.6")
 
+        # Update approval
         self.active_incident.approval = {
             "status": ApprovalStatus.APPROVED.value,
             "actor": actor,
@@ -132,6 +152,14 @@ class IncidentManager:
             "decided_at": datetime.utcnow().isoformat(),
             "approved_with_confidence": confidence
         }
+        
+        # Update remediation (simulated execution)
+        self.active_incident.remediation = {
+            "status": "EXECUTED",
+            "execution_mode": "SIMULATED",
+            "executed_at": datetime.utcnow().isoformat()
+        }
+        
         return self.active_incident.to_dict()
 
     def reject_incident(self, incident_id: str, actor: str, comment: Optional[str] = None):
@@ -174,13 +202,14 @@ class IncidentManager:
 
         # 2. Logic Flow
         if is_anomaly:
+            metrics = anomaly_result.get("metrics", {})
             if self.active_incident:
                 # Check correlation
                 if is_correlated(self.active_incident.last_seen_at, now):
                     # ONGOING Update
                     if self.active_incident.status == "RESOLVED":
                         # Resolved -> New anomaly -> New Incident
-                        self._create_new_incident(affected_services_set, current_signals, now)
+                        self._create_new_incident(affected_services_set, current_signals, now, metrics)
                     else:
                         # Truly ONGOING
                         self.active_incident.status = "ONGOING"
@@ -189,12 +218,14 @@ class IncidentManager:
                         self.active_incident.signals.update(current_signals)
                         self.active_incident.severity = calculate_severity(self.active_incident.signals)
                         self.active_incident.window_count += 1
+                        # Update metrics with latest data
+                        self.active_incident.metrics = metrics
                 else:
                     # Too much time passed -> New Incident
-                    self._create_new_incident(affected_services_set, current_signals, now)
+                    self._create_new_incident(affected_services_set, current_signals, now, metrics)
             else:
                 # No active incident -> Create NEW
-                self._create_new_incident(affected_services_set, current_signals, now)
+                self._create_new_incident(affected_services_set, current_signals, now, metrics)
         
         else:
             # NO Anomaly detected
@@ -240,7 +271,7 @@ class IncidentManager:
         except Exception as e:
             print(f"Failed to store incident: {e}")
 
-    def _create_new_incident(self, services: Set[str], signals: Set[str], now: datetime):
+    def _create_new_incident(self, services: Set[str], signals: Set[str], now: datetime, metrics: Dict = None):
         # 1. Draft the potential new incident to generate a query summary
         temp_services_str = ", ".join(services)
         temp_signals_str = ", ".join(signals)
@@ -258,5 +289,5 @@ class IncidentManager:
             print(f"Vector search failed: {e}")
             similar = []
 
-        # 3. Create Incident with cached similarity
-        self.active_incident = Incident(services, signals, now, similar_incidents=similar)
+        # 3. Create Incident with cached similarity and metrics
+        self.active_incident = Incident(services, signals, now, similar_incidents=similar, metrics=metrics)

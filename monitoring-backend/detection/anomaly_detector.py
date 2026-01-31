@@ -117,8 +117,8 @@ def detect_anomaly(db: Session):
         signals.append("latency_degradation")
         
     # 3. Traffic Volume Spike
-    # log_rate_short > log_rate_baseline * 2
-    if metrics["log_rate_short"] > metrics["log_rate_baseline"] * 2:
+    # log_rate_short > log_rate_baseline * 5
+    if metrics["log_rate_short"] > metrics["log_rate_baseline"] * 5:
         signals.append("traffic_volume_spike")
         
     # 4. Retry Storm

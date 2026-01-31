@@ -1,10 +1,40 @@
-export default function ReasoningPanel({ reasoning }) {
+export default function ReasoningPanel({ reasoning, isLoading, onRetry }) {
+    if (isLoading) {
+        return (
+            <div className="reasoning-section">
+                <div className="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 className="text-lg font-semibold text-white">Offline Reasoning Engine</h2>
+                        <p className="text-xs text-gray-400 mt-0.5">Analyzing incident...</p>
+                    </div>
+                </div>
+                <div className="bg-gray-800/50 p-8 rounded border border-gray-700 text-center">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-3"></div>
+                    <p className="text-gray-400">Generating reasoning...</p>
+                </div>
+            </div>
+        );
+    }
+
     if (!reasoning) {
         return (
             <div className="reasoning-section">
-                <h2>AI Reasoning</h2>
-                <div className="error-state">
-                    <p>AI reasoning unavailable. Please retry.</p>
+                <div className="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 className="text-lg font-semibold text-white">Offline Reasoning Engine</h2>
+                        <p className="text-xs text-gray-400 mt-0.5">Deterministic • Explainable • Always Available</p>
+                    </div>
+                </div>
+                <div className="bg-gray-800/50 p-6 rounded border border-yellow-700 text-center">
+                    <p className="text-yellow-400 mb-3">⚠️ Reasoning not yet generated</p>
+                    {onRetry && (
+                        <button
+                            onClick={onRetry}
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors"
+                        >
+                            Generate Reasoning
+                        </button>
+                    )}
                 </div>
             </div>
         );
@@ -12,17 +42,35 @@ export default function ReasoningPanel({ reasoning }) {
 
     return (
         <div className="reasoning-section">
-            <h2>AI Reasoning</h2>
+            <div className="flex justify-between items-center mb-4">
+                <div>
+                    <h2 className="text-lg font-semibold text-white">Offline Reasoning Engine</h2>
+                    <p className="text-xs text-gray-400 mt-0.5">Deterministic • Explainable • Always Available</p>
+                </div>
+                {/* Spinner or Status can go here */}
+            </div>
 
-            <div className="reasoning-content">
-                <div className="reasoning-block">
-                    <h3>Hypothesis</h3>
-                    <p>{reasoning.hypothesis || "No hypothesis provided"}</p>
+            <div className="space-y-4">
+                <div>
+                    <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">Hypothesis</h3>
+                    <p className="text-gray-200 bg-gray-800/50 p-3 rounded border border-gray-700">
+                        {reasoning.hypothesis || "No hypothesis generated."}
+                    </p>
                 </div>
 
-                <div className="reasoning-block">
-                    <h3>Evidence</h3>
-                    <p>{reasoning.evidence || "No evidence provided"}</p>
+                <div>
+                    <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">Evidence</h3>
+                    <div className="text-gray-300 bg-gray-800/50 p-3 rounded border border-gray-700 min-h-[60px]">
+                        {Array.isArray(reasoning.evidence) ? (
+                            <ul className="list-disc list-inside space-y-1">
+                                {reasoning.evidence.map((line, idx) => (
+                                    <li key={idx}>{line}</li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>{reasoning.evidence || "No evidence provided."}</p>
+                        )}
+                    </div>
                 </div>
 
                 <div className="reasoning-block">

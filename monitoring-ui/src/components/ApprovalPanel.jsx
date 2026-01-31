@@ -10,6 +10,18 @@ export default function ApprovalPanel({ incident, onDecision }) {
 
     const approval = incident.approval;
 
+    // Guard against incomplete data
+    if (!approval) {
+        return (
+            <div className="approval-section">
+                <h2>Human Approval</h2>
+                <div className="approval-pending">
+                    <p className="error-message">Incident data incomplete. Please refresh.</p>
+                </div>
+            </div>
+        );
+    }
+
     // Already decided
     if (approval.status !== "PENDING") {
         return (

@@ -98,8 +98,8 @@ export default function IncidentsPage() {
                                 <div className="info-item">
                                     <span className="info-label">Started At</span>
                                     <span className="info-value">
-                                        {incident.opened_at
-                                            ? new Date(incident.opened_at).toLocaleString()
+                                        {incident.started_at
+                                            ? new Date(incident.started_at).toLocaleString()
                                             : "—"}
                                     </span>
                                 </div>
@@ -108,7 +108,7 @@ export default function IncidentsPage() {
                         <Link to={`/incident/${incident.incident_id}`} className="card-action">
                             <span>View Details</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </Link>
                     </div>
