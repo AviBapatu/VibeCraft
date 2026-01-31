@@ -1,0 +1,15 @@
+[
+  {
+    "incident_id": "INC-5C601DA4",
+    "summary_text": "Integration Test Incident",
+    "signals": [
+      "latency_p99 > 500ms"
+    ],
+    "services": [
+      "db-shard-01"
+    ],
+    "severity": "LOW",
+    "resolution": "Fixed by test",
+    "resolved_at": "2026-01-31T23:57:12.806456"
+  }
+]

@@ -8,7 +8,7 @@ from correlation.incident_rules import (
     INCIDENT_RESOLUTION_TIMEOUT
 )
 from memory.vector_store import VectorStore
-from memory.embedder import embed
+from memory.embedder import Embedder
 from debug.pipeline_state import update_state
 
 class ApprovalStatus(str, Enum):
@@ -69,7 +69,10 @@ class IncidentManager:
     
     def __init__(self):
         self.active_incident: Optional[Incident] = None
-        self.vector_store = VectorStore() # Initialize vector store (loads from file or empty)
+        
+        # Initialize Embedder and VectorStore
+        self.embedder = Embedder()
+        self.vector_store = VectorStore(dim=self.embedder.dim)
 
     @classmethod
     def get_instance(cls):
@@ -221,7 +224,7 @@ class IncidentManager:
     def _store_incident(self, incident: Incident):
         """Embeds and stores the resolved incident."""
         try:
-            vector = embed(incident.summary_text)
+            vector = self.embedder.embed(incident.summary_text)
             meta = {
                 "incident_id": incident.incident_id,
                 "summary_text": incident.summary_text,
@@ -244,7 +247,7 @@ class IncidentManager:
         
         # 2. Query Memory (Once on creation)
         try:
-            query_vector = embed(query_text)
+            query_vector = self.embedder.embed(query_text)
             similar = self.vector_store.search(query_vector, k=3)
             # Guardrail: Exclude self (though this is new, strict safety)
             # Since this is a new object, it has no ID yet that is in the store.

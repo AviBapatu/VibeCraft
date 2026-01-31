@@ -5,6 +5,10 @@ from datetime import datetime
 from pydantic import BaseModel
 import google.generativeai as genai
 
+# DEBUG: Check API Key on Import
+api_key = os.getenv("GEMINI_API_KEY")
+print("Using GEMINI_API_KEY:", (api_key[:12] if api_key else "None"), "****")
+
 # Models
 class IncidentReasoningRequest(BaseModel):
     incident_id: str
@@ -191,18 +195,44 @@ class ReasoningAgent:
                 "uncertainty_notes": "LLM not initialized"
             }
 
-        try:
-            response = self.model.generate_content(prompt)
-            return self._parse_llm_response(response.text)
-        except Exception as e:
-            print(f"LLM Error: {e}")
-            return {
-                "hypothesis": primary_cause,
-                "evidence": "LLM generation failed",
-                "recommended_actions": ["Check system manually"],
-                "final_confidence": 0.5,
-                "uncertainty_notes": str(e)
-            }
+        # Retry logic for Rate Limits
+        import time
+        import random
+        from google.api_core.exceptions import ResourceExhausted
+
+        max_retries = 3
+        base_delay = 2
+
+        for attempt in range(max_retries + 1):
+            try:
+                response = self.model.generate_content(prompt)
+                return self._parse_llm_response(response.text)
+            
+            except ResourceExhausted as e:
+                if attempt < max_retries:
+                    delay = (base_delay * (2 ** attempt)) + random.uniform(0, 1)
+                    print(f"LLM Rate Limit hit. Retrying in {delay:.2f}s... (Attempt {attempt+1}/{max_retries})")
+                    time.sleep(delay)
+                    continue
+                else:
+                    print(f"LLM Rate Limit exhausted after {max_retries} retries.")
+                    return {
+                        "hypothesis": primary_cause,
+                        "evidence": "LLM Rate Limit Exceeded (Quota)",
+                        "recommended_actions": ["Check billing/quota", "Try again later"],
+                        "final_confidence": 0.5,
+                        "uncertainty_notes": "Rate limit exceeded"
+                    }
+
+            except Exception as e:
+                print(f"LLM Error: {e}")
+                return {
+                    "hypothesis": primary_cause,
+                    "evidence": "LLM generation failed",
+                    "recommended_actions": ["Check system manually"],
+                    "final_confidence": 0.5,
+                    "uncertainty_notes": str(e)
+                }
 
     def _parse_llm_response(self, text: str) -> Dict[str, Any]:
         """

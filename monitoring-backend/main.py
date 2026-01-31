@@ -1,4 +1,8 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI
+import httpx
 from fastapi.middleware.cors import CORSMiddleware
 from storage.database import engine, Base
 from api.ingest import router as ingest_router
@@ -22,11 +26,22 @@ app.include_router(anomaly_router)
 from api.incident import router as incident_router
 app.include_router(incident_router)
 
-from api.debug import router as debug_router
+from api.debug import router as debug_router, pipeline_router
 app.include_router(debug_router)
+app.include_router(pipeline_router)
 
 from api.demo import router as demo_router
 app.include_router(demo_router)
+
+@app.get("/attack/status")
+async def proxy_attack_status():
+    async with httpx.AsyncClient() as client:
+        try:
+            resp = await client.get("http://localhost:4000/attack/status")
+            return resp.json()
+        except:
+            return {"status": "unknown", "error": "Attack backend unreachable"}
+
 
 @app.get("/health")
 def health():

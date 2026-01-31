@@ -1,50 +1,56 @@
 import faiss
-import numpy as np
-import pickle
+import json
 import os
+import numpy as np
 
 class VectorStore:
-    def __init__(self, dim=384, index_path="memory.index", meta_path="memory_meta.pkl"):
+    def __init__(self, dim=384, index_path="memory/storage/index.faiss", meta_path="memory/storage/meta.json"):
         self.dim = dim
-        self.index = faiss.IndexFlatL2(dim)
-        self.metadata = []
         self.index_path = index_path
         self.meta_path = meta_path
-        
-        # Try to load existing data if available (simple persistence)
-        # However, requirements said "Offline, Fast, No infra". 
-        # Persistence "during runtime" is mandatory. 
-        # I'll add simple disk persistence just in case, but rely on runtime memory mostly.
-        # Actually user said "Memory persists during runtime". 
-        # I'll keep it simple in-memory for now to match "No infra" strictness, 
-        # but the class structure allows easy extension.
-    
-    def add(self, vector, meta):
-        """
-        Add a vector and its metadata to the store.
-        """
-        # FAISS expects float32
-        vector = np.array([vector]).astype("float32")
-        self.index.add(vector)
-        self.metadata.append(meta)
 
-    def search(self, vector, k=3):
-        """
-        Search for k nearest neighbors.
-        """
+        # Create storage directory if it doesn't exist
+        os.makedirs(os.path.dirname(index_path), exist_ok=True)
+
+        if os.path.exists(index_path) and os.path.exists(meta_path):
+            try:
+                self.index = faiss.read_index(index_path)
+                with open(meta_path, "r") as f:
+                    self.meta = json.load(f)
+                print(f"Loaded VectorStore with {self.index.ntotal} entries.")
+            except Exception as e:
+                print(f"Failed to load VectorStore, starting fresh: {e}")
+                self.index = faiss.IndexFlatL2(dim)
+                self.meta = []
+        else:
+            self.index = faiss.IndexFlatL2(dim)
+            self.meta = []
+
+    def add(self, vector, metadata):
+        vector = np.array(vector).astype("float32").reshape(1, -1)
+        self.index.add(vector)
+        self.meta.append(metadata)
+        self._persist()
+
+    def search(self, vector, k=5):
         if self.index.ntotal == 0:
             return []
-        
-        vector = np.array([vector]).astype("float32")
+
+        vector = np.array(vector).astype("float32").reshape(1, -1)
         distances, indices = self.index.search(vector, k)
-        
+
         results = []
-        for i, idx in enumerate(indices[0]):
-            if idx != -1 and idx < len(self.metadata):
-                results.append(self.metadata[idx])
-                
+        for idx in indices[0]:
+            if idx != -1 and idx < len(self.meta):
+                results.append(self.meta[idx])
+
         return results
 
     def _persist(self):
-        """Experimental file persistence if needed later"""
-        pass
+        try:
+            faiss.write_index(self.index, self.index_path)
+            with open(self.meta_path, "w") as f:
+                json.dump(self.meta, f, indent=2)
+            print(f"Persisted VectorStore to {self.index_path}")
+        except Exception as e:
+            print(f"Failed to persist VectorStore: {e}")
