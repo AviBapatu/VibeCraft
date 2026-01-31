@@ -7,10 +7,17 @@ export default function IncidentsPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getCurrentIncident().then((data) => {
-            setIncident(data);
-            setLoading(false);
-        });
+        const fetchIncident = () => {
+            getCurrentIncident().then((data) => {
+                setIncident(data);
+                setLoading(false);
+            });
+        };
+
+        fetchIncident(); // Initial fetch
+        const interval = setInterval(fetchIncident, 2000); // Poll every 2s
+
+        return () => clearInterval(interval);
     }, []);
 
     if (loading) {

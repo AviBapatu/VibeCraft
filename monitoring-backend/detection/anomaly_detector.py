@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from sqlalchemy.orm import Session
 from storage.log_repository import get_logs_between
+from debug.pipeline_state import update_state
 from detection.aggregation import (
     compute_error_rate,
     compute_avg_latency,
@@ -49,11 +50,18 @@ def detect_anomaly(db: Session):
     metrics["log_rate_baseline"] = compute_log_rate(baseline_logs, baseline_duration_seconds)
     metrics["avg_retry_baseline"] = compute_avg_retry(baseline_logs) # Note: this is density, not rate, so avg per log is fine
     
+    # Aggregation Debug State
+    # We use utcnow() for internal debug timestamps
+    update_state(
+        last_aggregation_at=datetime.utcnow().isoformat(),
+        last_metrics=metrics
+    )
+    
     signals = []
     
     # 1. Error Rate Spike
     # error_rate_short > max(0.1, 2 * error_rate_baseline)
-    if metrics["error_rate_short"] > max(0.1, 2 * metrics["error_rate_baseline"]):
+    if metrics["error_rate_short"] > max(0.05, 1.5 * metrics["error_rate_baseline"]):
         signals.append("error_rate_spike")
         
     # 2. Latency Degradation
@@ -74,10 +82,18 @@ def detect_anomaly(db: Session):
     # extract affected services
     affected_services = list(set(log.service for log in short_logs))
         
-    return {
+    result = {
         "anomaly": len(signals) > 0,
         "window": "last_60s",
         "signals": signals,
         "metrics": metrics,
         "affected_services": affected_services
     }
+
+    # Detection Debug State
+    update_state(
+        last_detection_at=datetime.utcnow().isoformat(),
+        last_detection_result=result
+    )
+
+    return result

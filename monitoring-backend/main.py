@@ -22,6 +22,47 @@ app.include_router(anomaly_router)
 from api.incident import router as incident_router
 app.include_router(incident_router)
 
+from api.debug import router as debug_router
+app.include_router(debug_router)
+
 @app.get("/health")
 def health():
     return {"status": "up"}
+
+import asyncio
+from datetime import datetime, timezone
+from storage.database import SessionLocal
+from detection.anomaly_detector import detect_anomaly
+from correlation.incident_manager import IncidentManager
+
+@app.on_event("startup")
+async def schedule_periodic_detection():
+    loop = asyncio.get_event_loop()
+    loop.create_task(run_detection_loop())
+
+async def run_detection_loop():
+    print("Starting background anomaly detection loop...")
+    while True:
+        try:
+            # Run detection every 5 seconds
+            await asyncio.sleep(5)
+            
+            db = SessionLocal()
+            try:
+                # 1. Detect
+                result = detect_anomaly(db)
+                
+                # 2. Update Incident State
+                manager = IncidentManager.get_instance()
+                manager.update(
+                    anomaly_result=result,
+                    affected_services=result.get("affected_services", []),
+                    now=datetime.now(timezone.utc)
+                )
+            finally:
+                db.close()
+                
+        except Exception as e:
+            print(f"Error in detection loop: {e}")
+            # Don't crash the loop
+            await asyncio.sleep(5)
