@@ -3,6 +3,7 @@ load_dotenv()
 
 from fastapi import FastAPI
 import httpx
+import os
 from fastapi.middleware.cors import CORSMiddleware
 from storage.database import engine, Base
 from api.ingest import router as ingest_router
@@ -13,9 +14,10 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Monitoring Backend")
 
 # Add CORS middleware for frontend
+cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:5174").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],  # Vite dev servers
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,9 +37,10 @@ app.include_router(demo_router)
 
 @app.get("/attack/status")
 async def proxy_attack_status():
+    attack_backend_url = os.getenv("ATTACK_BACKEND_URL", "http://localhost:4000")
     async with httpx.AsyncClient() as client:
         try:
-            resp = await client.get("http://localhost:4000/attack/status")
+            resp = await client.get(f"{attack_backend_url}/attack/status")
             return resp.json()
         except:
             return {"status": "unknown", "error": "Attack backend unreachable"}

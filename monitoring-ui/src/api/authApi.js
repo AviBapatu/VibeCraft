@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_MONITORING_BACKEND_URL || "http://localhost:5000";
 
 // For now, we'll use mock authentication
 // In production, this would connect to your backend auth endpoints
@@ -18,7 +18,7 @@ export async function login(email, password) {
 
         // Mock response for now
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-        
+
         // Simple validation
         if (!email || !password) {
             return { success: false, message: "Email and password are required" };
@@ -66,7 +66,7 @@ export async function signup(email, password, faceImage) {
 
         // Mock response for now
         await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API delay
-        
+
         // Simple validation
         if (!email || !password) {
             return { success: false, message: "Email and password are required" };
@@ -82,7 +82,7 @@ export async function signup(email, password, faceImage) {
 
         // Mock successful signup with face image
         console.log("Face image captured:", faceImage.substring(0, 50) + "...");
-        
+
         return {
             success: true,
             user: {
@@ -110,7 +110,7 @@ export async function logout(token) {
         //     }
         // });
         // return res.ok;
-        
+
         // For mock, just return success
         return true;
     } catch (error) {

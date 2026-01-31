@@ -18,7 +18,8 @@ function sendToConsole(log) {
 async function sendToMonitoring(log) {
     try {
         const axios = require("axios");
-        await axios.post("http://localhost:5000/ingest/log", log);
+        const monitoringUrl = process.env.MONITORING_BACKEND_URL || "http://localhost:5000";
+        await axios.post(`${monitoringUrl}/ingest/log`, log);
     } catch (err) {
         // Silently fail for now as per instructions (or maybe simple console error if needed, but "No retries yet" implies fire and forget)
         // User said: "That’s it. No retries yet. No batching yet."

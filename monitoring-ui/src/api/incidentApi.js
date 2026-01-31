@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_MONITORING_BACKEND_URL || "http://localhost:5000";
 
 export async function getCurrentIncident() {
     try {

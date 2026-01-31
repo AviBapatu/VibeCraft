@@ -1,8 +1,13 @@
 import requests
 import time
 import json
+import os
+from dotenv import load_dotenv
 
-BASE_URL = "http://localhost:5000"
+load_dotenv()
+
+BASE_URL = os.getenv("MONITORING_BACKEND_URL", "http://localhost:5000")
+ATTACK_BACKEND_URL = os.getenv("ATTACK_BACKEND_URL", "http://localhost:4000")
 
 def log(msg):
     print(f"[TEST] {msg}")
@@ -29,7 +34,7 @@ def verify_approval_flow():
         log("No active incident found. Triggering attack on Attack Backend...")
         try:
             # Trigger Auth Failure (Faster detection)
-            requests.post("http://localhost:4000/attack/start/auth-failure", json={})
+            requests.post(f"{ATTACK_BACKEND_URL}/attack/start/auth-failure", json={})
             log("Attack triggered. Waiting for incident to form...")
             
             # Wait loop

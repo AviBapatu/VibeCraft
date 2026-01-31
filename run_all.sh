@@ -58,7 +58,7 @@ sleep 1
 gnome-terminal --title="📊 Monitoring UI (5173)" -- bash -c "
 cd $ROOT_DIR/monitoring-ui || exit;
 npm install;
-npm run dev -- --port 5173;
+npm run dev -- --port 5173 --host 0.0.0.0;
 exec bash
 "
 
@@ -68,7 +68,7 @@ sleep 1
 gnome-terminal --title="🧪 Simulator UI (5174)" -- bash -c "
 cd $ROOT_DIR/simulator-ui || exit;
 npm install;
-npm run dev -- --port 5174;
+npm run dev -- --port 5174 --host 0.0.0.0;
 exec bash
 "
 

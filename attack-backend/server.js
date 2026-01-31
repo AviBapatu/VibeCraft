@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const { startScenario, stopScenario, startBaseline, getStatus } = require("./scenarioManager");
 
@@ -46,7 +48,9 @@ app.post("/attack/stop/:name", (req, res) => {
     res.json({ status: "stopped", scenario: req.params.name });
 });
 
-app.listen(4000, () => {
-    console.log("Attack backend running on port 4000");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+    console.log(`Attack backend running on port ${PORT}`);
     startBaseline();
 });

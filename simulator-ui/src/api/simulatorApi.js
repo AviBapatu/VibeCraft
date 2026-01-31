@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:4000';
-const MONITORING_BASE = 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_ATTACK_BACKEND_URL || 'http://localhost:4000';
+const MONITORING_BASE = import.meta.env.VITE_MONITORING_BACKEND_URL || 'http://localhost:5000';
 
 export const simulatorApi = {
     startScenario: async (name) => {
