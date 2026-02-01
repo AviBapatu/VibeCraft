@@ -3,6 +3,10 @@
 🎥 **Demo Video:**  
 https://drive.google.com/file/d/130mRmAjps0BirHzPkfDr7I-Pxsv09IOk/view?usp=sharing
 
+🔗 **Live Deployments:**  
+- Production UI: https://vibe-craft-eight.vercel.app/  
+- Staging / Feature UI: https://vibe-craft-rho.vercel.app/
+
 > **A comprehensive real-time monitoring and incident management platform with AI-powered anomaly detection and attack simulation capabilities**
 
 ---
